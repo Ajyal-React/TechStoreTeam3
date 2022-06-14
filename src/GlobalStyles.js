@@ -107,3 +107,4 @@ export const Button = styled.a.attrs((props) => ({
   text-align: center;
   background-color: ${({ outline }) => (outline ? "transparent" : "#fff")};
 `;
+
