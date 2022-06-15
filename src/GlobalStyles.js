@@ -58,7 +58,10 @@ export const Title = styled.p.attrs((props) => ({
   color: props.color,
 }))`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "16px")};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
   color: ${({ color }) => (color ? color : "#000")};
+  margin-bottom: ${({ marginBottom }) =>
+    marginBottom ? marginBottom : "15px"};
 `;
 
 export const Text = styled.p`

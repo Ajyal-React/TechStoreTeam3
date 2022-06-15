@@ -7,6 +7,7 @@ export const NavSection = styled.div`
   box-shadow: 0px 3px 6px #00000029;
   line-height: normal;
   align-items: center;
+  opacity: 0.79;
 `;
 
 export const SelectOpctions = styled.select`
