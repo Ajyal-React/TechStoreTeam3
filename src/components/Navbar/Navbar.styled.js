@@ -30,9 +30,9 @@ export const NavbarList = styled.div`
 export const List = styled.li`
   list-style: none;
   display: inline-block;
-  font-size: 16px;
   cursor: pointer;
-  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "25px")};
+  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "18px")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
   &:hover {
     color: #fa7400;
     transition: 0.5s;
@@ -43,7 +43,7 @@ export const List = styled.li`
 `;
 
 export const Logo = styled.img`
-  width: 188px;
+  width: 150px;
   margin-left: 3%;
 `;
 
