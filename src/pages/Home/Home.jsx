@@ -1,13 +1,12 @@
-import { Container } from "../../GlobalStyles";
+import { HomeContainer } from "./Home.styled";
 import { SingleSlider } from "../../components";
 
 const Home = () => {
   return (
-    <Container w="100%" h="100vh">
-      <Container margin="auto" mt="50px" w="85%">
-        <SingleSlider />
-      </Container>
-    </Container>
+    <HomeContainer>
+      {/* SingleSlider Section */}
+      <SingleSlider />
+    </HomeContainer>
   );
 };
 
