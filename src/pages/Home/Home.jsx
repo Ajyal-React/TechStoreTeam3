@@ -1,4 +1,3 @@
-import { Container } from "../../GlobalStyles";
 import { SingleSlider } from "../../components";
 import Featuredproducts from "../../components/FeaturedProducts";
 import OfferSection from "../../components/OfferSection";
