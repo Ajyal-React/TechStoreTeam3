@@ -1,6 +1,6 @@
-import { Container } from "../../GlobalStyles";
-import Button from "../Button";
-import { OfferSection, Text } from "./index.style";
+// import { Container } from "../../GlobalStyles";
+// import Button from "../Button";
+import { OfferSection } from "./index.style";
 
 const Offer = (props) => {
   return (

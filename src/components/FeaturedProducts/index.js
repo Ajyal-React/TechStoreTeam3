@@ -10,7 +10,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 
 const Featuredproducts = (props) => {
-  const [Product, setProducts] = useState([
+  const [Product] = useState([
     {
       image: "Images/wristwatch.PNG",
       title: "Smart Watch",
