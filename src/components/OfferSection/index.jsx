@@ -5,7 +5,7 @@ import { OfferSection, Text } from "./index.style";
 const Offer = (props) => {
   return (
     <OfferSection>
-      <Container
+      {/* <Container
         w="60%"
         margin="auto"
         style={{
@@ -18,7 +18,7 @@ const Offer = (props) => {
         <Button
           text="Start Shopping"
         />
-      </Container>
+      </Container> */}
     </OfferSection>
   );
 };

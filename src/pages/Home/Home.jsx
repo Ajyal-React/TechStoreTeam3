@@ -6,7 +6,7 @@ import OfferSection from "../../components/OfferSection";
 const Home = () => {
   return (
     <HomeContainer>
-          <SingleSlider />
+      <SingleSlider />
       <OfferSection />
       <Featuredproducts />
     </HomeContainer>
