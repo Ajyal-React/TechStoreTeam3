@@ -1,18 +1,15 @@
+import { HomeContainer } from "./Home.styled";
 import { SingleSlider } from "../../components";
 import Featuredproducts from "../../components/FeaturedProducts";
 import OfferSection from "../../components/OfferSection";
 
 const Home = () => {
   return (
-    <Container w="100%" h="100vh">
-      <Container margin="auto" mt="50px" w="85%">
-        <SingleSlider />
-      </Container>
+    <HomeContainer>
+          <SingleSlider />
       <OfferSection />
-      <Container margin="auto" mt="50px" w="85%">
-        <Featuredproducts />
-      </Container>
-    </Container>
+      <Featuredproducts />
+    </HomeContainer>
   );
 };
 

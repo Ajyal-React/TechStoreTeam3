@@ -1,7 +1,16 @@
-import Home from "./pages/Home/Home.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./pages";
+import GlobalStyle from "./GlobalStyles";
 
 function App() {
-  return <Home />;
+  return (
+    <BrowserRouter>
+      <GlobalStyle />
+      <Routes>
+        <Route index path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

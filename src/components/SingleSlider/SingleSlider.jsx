@@ -1,6 +1,7 @@
-import { Container } from "../../GlobalStyles";
-import SingleSliderItem from "../SingleSliderItem/SingleSliderItem.jsx";
-import { SliderContainer } from "../SingleSlider/SingleSlider.js";
+import SliderItem from "./SliderItem/SliderItem";
+import { SliderContainer } from "./SingleSlider.styled";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./dots.css";
 
@@ -58,13 +59,11 @@ const SingleSlider = () => {
 
   return (
     <SliderContainer>
-      <Container bg="#F9F8F8" radius="5px">
         <Slider {...settings}>
           {data.map((item) => (
-            <SingleSliderItem itemData={item} key={item.id}/>
+            <SliderItem itemData={item} key={item.id} />
           ))}
         </Slider>
-      </Container>
     </SliderContainer>
   );
 };
