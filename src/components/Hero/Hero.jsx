@@ -5,17 +5,19 @@ import {
   Image,
   TetleHero,
   BtnHero,
-  IconArrow,
+  
+  IconDown,
 } from "../Hero/Hero.styled";
 import { Title, Text } from "../../GlobalStyles";
-import { MdOutlineDoubleArrow }  from "react-icons/md";;
+import { BsChevronDoubleRight } from "react-icons/bs";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Hero = () => {
   return (
     <HeroSection>
       <Navbar />
       <Image src="images/hero_bg.png" />
-      <TetleHero bottom="10%" left="10%">
+      <TetleHero top="50%" left="10%">
         <Title fontSize="40px" color="#fff" marginBottom="20px">
           PLAYSTATION 5
         </Title>
@@ -24,10 +26,11 @@ const Hero = () => {
         </Text>
         <BtnHero>
           Start Shopping{" "}
-          <IconArrow>
-            <MdOutlineDoubleArrow />
-          </IconArrow>
+            <BsChevronDoubleRight />
         </BtnHero>
+        <IconDown>
+          <IoIosArrowDown/>
+        </IconDown>
       </TetleHero>
     </HeroSection>
   );
