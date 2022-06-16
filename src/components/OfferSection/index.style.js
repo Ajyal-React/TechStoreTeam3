@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const OfferSection = styled.div`
-  margin-top: 193px;
+  margin-top: 193px; 
   width: 100%;
   height: auto;
   padding: 80px 0px;
@@ -10,8 +10,13 @@ export const OfferSection = styled.div`
   background-size: cover;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: auto;
 `;
 
 export const Text = styled.p`
