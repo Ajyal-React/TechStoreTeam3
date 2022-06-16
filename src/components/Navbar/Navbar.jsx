@@ -22,7 +22,7 @@ const Navbar = () => {
       </SpanIcon>
       <NavbarList>
         <ul>
-          <List>Home</List>
+          <List colorActive='#fa7400'>Home</List>
           <List>New arrival</List>
           <List>Mobiles</List>
         </ul>
