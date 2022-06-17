@@ -7,6 +7,9 @@ export const NavSection = styled.div`
   box-shadow: 0px 3px 6px #00000029;
   line-height: normal;
   align-items: center;
+  opacity: 0.79;
+  z-index: 1;
+  position: relative;
 `;
 
 export const SelectOpctions = styled.select`
@@ -33,6 +36,8 @@ export const List = styled.li`
   cursor: pointer;
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "18px")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
+  color: ${({ colorActive }) => (colorActive ? colorActive : "#000")};
+
   &:hover {
     color: #fa7400;
     transition: 0.5s;

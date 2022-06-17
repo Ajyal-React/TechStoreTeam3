@@ -4,10 +4,12 @@ import Featuredproducts from "../../components/FeaturedProducts";
 import OfferSection from "../../components/OfferSection";
 import Navbar from "../../components/Navbar/Navbar";
 import TrendingCards from "../../components/Trending/TrendingCards"
+import Hero from '../../components/Hero/Hero'
+
 const Home = () => {
   return (
     <HomeContainer>
-      <Navbar/>
+      <Hero/>
       <SingleSlider />
       <OfferSection />
       <Featuredproducts />

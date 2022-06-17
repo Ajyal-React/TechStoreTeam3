@@ -12,7 +12,7 @@ export const SliderSection = styled.div`
   flex-direction: column;
   margin: 104px 0px;
 
- /*  @media ${devices.mobileS} {
+  /*  @media ${devices.mobileS} {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,4 +63,11 @@ export const TopTitle = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+  margin: 0 auto;
+  width: 80%;
+  @media ${devices.mobileS} {
+   /*  text-align: center;
+    justify-content: center;
+    align-items: center; */
+  }
 `;

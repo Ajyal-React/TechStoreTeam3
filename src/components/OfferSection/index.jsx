@@ -1,24 +1,11 @@
-// import { Container } from "../../GlobalStyles";
-// import Button from "../Button";
-import { OfferSection } from "./index.style";
+import Button from "../Button";
+import { Container, OfferSection, Text } from "./index.style";
 
 const Offer = (props) => {
   return (
     <OfferSection>
-      {/* <Container
-        w="60%"
-        margin="auto"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around",
-        }}
-      >
-        <Text>Get 50% Off</Text>
-        <Button
-          text="Start Shopping"
-        />
-      </Container> */}
+      <Text>Get 50% Off</Text>
+      <Button text="Start Shopping" /* padding="61 18" */ />
     </OfferSection>
   );
 };

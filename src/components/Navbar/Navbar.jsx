@@ -6,9 +6,9 @@ import {
   List,
   Logo,
   SpanIcon,
-  BtnSginIn
+  BtnSginIn,
 } from "../Navbar/Navbar.styled";
-import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -22,21 +22,20 @@ const Navbar = () => {
       </SpanIcon>
       <NavbarList>
         <ul>
-          <List>Home</List>
+          <List colorActive="#fa7400">Home</List>
           <List>New arrival</List>
           <List>Mobiles</List>
         </ul>
       </NavbarList>
       <Logo src="images/logo.png" />
-      <NavbarList marginLeft='2%'>
+      <NavbarList marginLeft="2%">
         <ul>
-          <List marginLeft='15px'>Laptop</List>
-          <List marginLeft='15px'>Headphones</List>
-          <List marginLeft='15px'>Accessorieas</List>
+          <List marginLeft="15px">Laptop</List>
+          <List marginLeft="15px">Headphones</List>
+          <List marginLeft="15px">Accessorieas</List>
         </ul>
-        
       </NavbarList>
-      <BtnSginIn marginLeft='8%'>Sgin In</BtnSginIn>
+      <BtnSginIn marginLeft="8%">Sgin In</BtnSginIn>
     </NavSection>
   );
 };
