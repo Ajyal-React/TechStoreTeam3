@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 /*Left section starts here*/
-export const LogInContainer = styled.section`
+export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -129,7 +129,7 @@ export const QuestionSection = styled.div`
   box-sizing: border-box;
 `;
 
-export const Question = styled.p`
+export const Question = styled.a`
   color: #707070;
   height: 10%;
   margin-right: 260px;

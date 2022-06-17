@@ -1,4 +1,4 @@
-import "./index.style";
+import { Fragment } from "react";
 import {
   LeftSection,
   Container,
@@ -16,14 +16,12 @@ import {
   Question,
   BoldBlack,
   QuestionSection,
-} from "./index.style";
-
-/* import { HiMail } from "react-icons/hi"; */
+} from "../LogIn/index.style";
+import "./index.style";
 import { TextField } from "@mui/material";
-import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-const LogIn = () => {
+const SignUp = () => {
   return (
     <Fragment>
       {/*Login container starts here*/}
@@ -31,9 +29,9 @@ const LogIn = () => {
         {/*Left section starts here*/}
         <LeftSection>
           <Image src="images/logo.PNG"></Image>
-          <WelcomeText>Welcome Back!</WelcomeText>
+          <WelcomeText>Get Started</WelcomeText>
           <DescText>
-            Login to your account and start your shopping
+            Create a new account and start shopping NOW!
             <ItalicText>NOW</ItalicText>!
           </DescText>
           <LaptopImage source="images/LaptopLogin.svg"></LaptopImage>
@@ -43,15 +41,15 @@ const LogIn = () => {
         {/*Form section starts here*/}
         <FormSection>
           <LoginForm>
-            <LoginText>login</LoginText>
+            <LoginText>Sign Up</LoginText>
             {/*  <Input
-            label="Filled"
-            variant="filled"
-            placeHolder="Email"
-            Name="email"
-            Type="email"
-          />
-          <Input Name="email" Type="password" /> */}
+              label="Filled"
+              variant="filled"
+              placeHolder="Email"
+              Name="email"
+              Type="email"
+            />
+            <Input Name="email" Type="password" /> */}
             <TextField
               focused
               id="filled-basic"
@@ -80,6 +78,7 @@ const LogIn = () => {
               label="&#9993; Password"
               variant="filled"
               sx={{
+                marginBottom: "18px",
                 width: "70%",
                 backgroundColor: "#FFFFFF",
                 boxShadow: "0 0 10px #719ECE 0.8;",
@@ -93,6 +92,24 @@ const LogIn = () => {
               placeholder="&#9993; Password"
               type="password"
             />
+            <TextField
+              id="filled-basic"
+              label="&#9993; Confirm Password"
+              variant="filled"
+              sx={{
+                width: "70%",
+                backgroundColor: "#FFFFFF",
+                boxShadow: "0 0 10px #719ECE 0.8;",
+                border: "none",
+                "&:focus ": {
+                  outline: "none !important",
+                  borderColor: "#719ECE",
+                  borderLeft: "5px solid #F6921E",
+                },
+              }}
+              placeholder="&#9993; Confirm Password"
+              type="password"
+            />
             <span
               style={{
                 fontSize: "14px",
@@ -101,37 +118,24 @@ const LogIn = () => {
                 marginLeft: "425px",
                 zIndex: "2",
               }}
-            >
-              <a
-                style={{
-                  color: "#22B9FF",
-                  textDecoration: "none",
-                  backgroundColor: "trasnparent",
-                  fontWeight: "bold",
-                  fontSize: "12px",
-                }}
-                href="\#"
-              >
-                FORGET?
-              </a>
-            </span>
+            ></span>
             <LoginButton>
-              login <LoginIcon src="images/arrow.svg" />
+              Sign Up <LoginIcon src="images/arrow.svg" />
             </LoginButton>
           </LoginForm>
           <QuestionSection>
             <Question>
-              Don't have account?
+              Already member?
               <BoldBlack href="#">
                 <Link
-                  to="/signup"
+                  to="/login"
                   style={{
                     textDecoration: "none",
                     color: "#3b3b3b",
                     fontWeight: "bold",
                   }}
                 >
-                  Sgin up
+                  Login
                 </Link>
               </BoldBlack>
             </Question>
@@ -145,4 +149,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;
