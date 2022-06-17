@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { devices } from "../../General/MediaQuery.style";
 
 export const ContinerItem = styled.div`
-  padding: 80px;
+  padding: 85px;
+  background: #f9f8f8 0% 0% no-repeat padding-box;
 `;
 export const ContinerCard = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ export const Images = styled.img`
   width: 100%;
   height: 200px;
   background: #f9f8f8 0% 0% no-repeat padding-box;
-  border: 0.3px solid #575252;
+  border: 0.3px solid #dfdede;
   border-radius: 8px;
 `;
 
