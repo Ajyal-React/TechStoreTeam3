@@ -14,6 +14,7 @@ import {
 } from "./ProductDetails.styled";
 import { Navbar, RadioColor } from "../../components";
 import { Column, Row, Divider } from "../../GlobalStyles";
+import Footer from "../../components/Footer/Footer";
 
 const ProductDetails = () => {
   return (
@@ -76,6 +77,7 @@ const ProductDetails = () => {
           <Button>Add To Cart</Button>
         </DetailsColumn>
       </DetailsContent>
+      <Footer/>
     </ProductDetailsContainer>
   );
 };
