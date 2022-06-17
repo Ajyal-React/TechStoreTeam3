@@ -51,6 +51,7 @@ export const LgTitle = styled.h2`
   font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "10px")};
 `;
 
 export const Title = styled.p.attrs((props) => ({

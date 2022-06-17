@@ -3,7 +3,7 @@ import { SingleSlider } from "../../components";
 import Featuredproducts from "../../components/FeaturedProducts";
 import OfferSection from "../../components/OfferSection";
 import Navbar from "../../components/Navbar/Navbar";
-
+import TrendingCards from "../../components/Trending/TrendingCards"
 const Home = () => {
   return (
     <HomeContainer>
@@ -11,6 +11,7 @@ const Home = () => {
       <SingleSlider />
       <OfferSection />
       <Featuredproducts />
+      <TrendingCards/>
     </HomeContainer>
   );
 };
