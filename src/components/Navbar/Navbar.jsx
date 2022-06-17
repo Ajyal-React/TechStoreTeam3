@@ -9,6 +9,7 @@ import {
   BtnSginIn,
 } from "../Navbar/Navbar.styled";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -35,7 +36,9 @@ const Navbar = () => {
           <List marginLeft="15px">Accessorieas</List>
         </ul>
       </NavbarList>
-      <BtnSginIn marginLeft="8%">Sgin In</BtnSginIn>
+      <BtnSginIn>
+        <Link to="/login" style={{ textDecoration: 'none' }} >Sgin In</Link>
+      </BtnSginIn>
     </NavSection>
   );
 };
