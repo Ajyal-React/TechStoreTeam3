@@ -28,15 +28,18 @@ export const SpanIcon = styled.span`
 `;
 
 export const NavbarList = styled.div`
-  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "6%")};
+  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "8%")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
+  color: ${({ color }) => (color ? color : "#000")};
 `;
 export const List = styled.li`
   list-style: none;
-  display: inline-block;
+  display: ${({ display }) => (display ? display : "inline-block")};
+  margin-top: ${({ marginTop }) => (marginTop ? marginTop : "0")};
   cursor: pointer;
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "18px")};
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
   color: ${({ colorActive }) => (colorActive ? colorActive : "#000")};
+  font-weight: ${({ weight }) => (weight ? weight : "500")};
 
   &:hover {
     color: #fa7400;
