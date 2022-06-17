@@ -5,6 +5,7 @@ import {
   DetailsColumn,
   RowGap,
   SmImageDisplay,
+  SmImageBox,
   ProductTitle,
   SmText,
   Span,
@@ -22,11 +23,21 @@ const ProductDetails = () => {
         <DetailsColumn>
           <ImageDisplay src="./images/bag.png" />
           <RowGap gap="13px">
-            <SmImageDisplay src="./images/bag.png" />
-            <SmImageDisplay src="./images/bag.png" />
-            <SmImageDisplay src="./images/bag.png" />
-            <SmImageDisplay src="./images/bag.png" />
-            <SmImageDisplay src="./images/bag.png" />
+            <SmImageBox>
+              <SmImageDisplay src="./images/bag.png" />
+            </SmImageBox>
+            <SmImageBox>
+              <SmImageDisplay src="./images/phone1.png" />
+            </SmImageBox>
+            <SmImageBox>
+              <SmImageDisplay src="./images/phone2.png" />
+            </SmImageBox>
+            <SmImageBox>
+              <SmImageDisplay src="./images/phone3.png" />
+            </SmImageBox>
+            <SmImageBox>
+              <SmImageDisplay src="./images/phone4.png" />
+            </SmImageBox>
           </RowGap>
         </DetailsColumn>
 
