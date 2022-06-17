@@ -9,7 +9,8 @@ export const NavSection = styled.div`
   align-items: center;
   opacity: 0.79;
   z-index: 1;
-  position: relative;
+  position: fixed;
+  width: 100%;
 `;
 
 export const SelectOpctions = styled.select`

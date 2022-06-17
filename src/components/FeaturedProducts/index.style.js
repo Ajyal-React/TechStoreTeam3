@@ -25,6 +25,7 @@ export const SliderTitle = styled("h3")`
   color: #302f2f;
   font-size: 14px;
   text-transform: uppercase;
+  font-weight: 400;
 `;
 
 export const SliderBigTitle = styled("h5")`
@@ -66,7 +67,7 @@ export const TopTitle = styled.div`
   margin: 0 auto;
   width: 80%;
   @media ${devices.mobileS} {
-   /*  text-align: center;
+    /*  text-align: center;
     justify-content: center;
     align-items: center; */
   }
