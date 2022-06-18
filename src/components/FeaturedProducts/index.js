@@ -10,7 +10,7 @@ import Slider from "react-slick";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './dots.css'
+import './style.css'
 import "./arrow.css";
 
 function SampleNextArrow(props) {
