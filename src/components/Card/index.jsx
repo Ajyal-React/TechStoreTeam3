@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillHeart, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
-import { CardPhone, FlexBox, Icon, ImgDimension, ImgMulti, Lines, Price, SubHeading } from "./index.style";
+import { CardPhone } from "../../GlobalStyles";
+import { FlexBox, Icon, ImgDimension, ImgMulti, Lines, Price, SubHeading } from "./index.style";
 
 function Card(props) {
 
