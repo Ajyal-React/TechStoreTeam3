@@ -29,8 +29,7 @@ export const SliderBigTitle = styled("h5")`
 export const SliderContent = styled.div`
   width: 100%;
   height: auto;
-  height: auto;
-  /* margin: 104px 0px; */
+  margin: 0px auto;
   margin-top: 42px;
 `;
 
@@ -42,3 +41,4 @@ export const TopTitle = styled.div`
   margin: 0 auto;
   width: 80%;
 `;
+

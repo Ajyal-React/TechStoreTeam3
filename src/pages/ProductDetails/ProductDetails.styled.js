@@ -9,6 +9,7 @@ export const ProductDetailsContainer = styled.div`
 
 export const DetailsContent = styled.div`
   margin: 40px 140px;
+  margin-top:180px;
   display: flex;
   gap: 50px;
   ${mobile(css`
