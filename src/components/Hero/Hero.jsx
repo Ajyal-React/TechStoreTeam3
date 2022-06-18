@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <HeroSection>
       <Navbar />
-      <Image src="images/hero_bg.png" />
+      <Image src="images/bg.png" />
       <TetleHero top="50%" left="10%">
         <Title fontSize="40px" color="#fff" marginBottom="20px">
           PLAYSTATION 5
@@ -25,7 +25,7 @@ const Hero = () => {
           lightning-fast download speed with super-fast ssd storage
         </Text>
         <BtnHero>
-          Start Shopping{" "}
+          Start Shopping
             <BsChevronDoubleRight />
         </BtnHero>
         <IconDown>
