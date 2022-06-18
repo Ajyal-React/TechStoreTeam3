@@ -1,8 +1,3 @@
-import SliderItem from "../SliderItem";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-
 import {
   SliderSection,
   SliderTitle,
@@ -10,6 +5,8 @@ import {
   SliderContent,
   TopTitle,
 } from "./index.style";
+import SliderItem from "../SliderItem";
+import Slider from "react-slick";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 
@@ -19,8 +16,8 @@ const Featuredproducts = (props) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 3,
   };
   //Slick carousal settings ends here
 

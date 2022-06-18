@@ -4,6 +4,7 @@ import { devices } from "../../General/MediaQuery.style";
 export const Item = styled.div`
   width: 25%;
   height: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
