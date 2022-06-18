@@ -1,5 +1,3 @@
-
-
 import {
   SliderSection,
   SliderTitle,
@@ -11,6 +9,8 @@ import SliderItem from "../SliderItem";
 import Slider from "react-slick";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import './index.css'
 
 const Featuredproducts = (props) => {
   //Slick carousal settings starts here
@@ -21,10 +21,12 @@ const Featuredproducts = (props) => {
     slidesToShow: 4,
     slidesToScroll: 2,
     autoplay: true,
+    dotsClass: "button__bar",
+    arrows: true,
   };
   //Slick carousal settings ends here
 
-  //Products list array starts here 
+  //Products list array starts here
 
   const [Product] = useState([
     {
@@ -98,7 +100,7 @@ const Featuredproducts = (props) => {
       arrowIcon: <AiOutlineArrowRight />,
     },
   ]);
-  //Products list array ends here 
+  //Products list array ends here
 
   return (
     <SliderSection>
@@ -117,7 +119,9 @@ const Featuredproducts = (props) => {
               price={el.price}
               moreInfo={el.moreInfo}
               arrowIcon={el.arrowIcon}
-            />
+            >
+              
+            </SliderItem>
           ))}
         </Slider>
       </SliderContent>
