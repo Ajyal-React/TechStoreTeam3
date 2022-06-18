@@ -8,6 +8,7 @@ import Hero from '../../components/Hero/Hero'
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card";
 import Categories from "../../components/FeaturedCategories/Categories";
+import ShowFeatured from "../../components/ShowFeatured";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Card /> */}
       <Categories />
       {/* <SingleSlider /> */}
+      {/* <ShowFeatured /> */}
       <OfferSection />
       <Featuredproducts />
       <TrendingCards/>
