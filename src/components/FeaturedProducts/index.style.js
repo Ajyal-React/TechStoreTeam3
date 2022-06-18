@@ -34,7 +34,7 @@ export const SliderBigTitle = styled("h5")`
   text-transform: uppercase;
 `;
 
-export const Slider = styled.div`
+export const SliderContent = styled.div`
   width: 100%;
   margin: 0 auto;
   height: auto;

@@ -1,15 +1,31 @@
 import SliderItem from "../SliderItem";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 import {
   SliderSection,
   SliderTitle,
   SliderBigTitle,
-  Slider,
+  SliderContent,
   TopTitle,
 } from "./index.style";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 
 const Featuredproducts = (props) => {
+  //Slick carousal settings starts here
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  //Slick carousal settings ends here
+
+  //Products list array starts here starts here
+
   const [Product] = useState([
     {
       image: "Images/wristwatch.PNG",
@@ -40,6 +56,8 @@ const Featuredproducts = (props) => {
       arrowIcon: <AiOutlineArrowRight />,
     },
   ]);
+  //Products list array ends here starts here
+
   return (
     <SliderSection>
       <TopTitle>
@@ -47,17 +65,19 @@ const Featuredproducts = (props) => {
         <SliderBigTitle>Featured products</SliderBigTitle>
       </TopTitle>
 
-      <Slider>
-        {Product.map((el) => (
-          <SliderItem
-            source={el.image}
-            title={el.title}
-            price={el.price}
-            moreInfo={el.moreInfo}
-            arrowIcon={el.arrowIcon}
-          />
-        ))}
-      </Slider>
+      <SliderContent>
+        <Slider {...settings}>
+          {Product.map((el) => (
+            <SliderItem
+              source={el.image}
+              title={el.title}
+              price={el.price}
+              moreInfo={el.moreInfo}
+              arrowIcon={el.arrowIcon}
+            />
+          ))}
+        </Slider>
+      </SliderContent>
     </SliderSection>
   );
 };
