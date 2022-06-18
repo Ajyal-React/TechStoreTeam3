@@ -116,16 +116,17 @@ export const LoginButton = styled.button`
 export const LoginIcon = styled.img`
   margin-bottom: -6px;
   width: 10%;
-&:hover {
+  &:hover {
     width: 11%;
     margin-left: 10px;
-}
+  }
 `;
 /*FormSection ends here*/
 
 /*Question starts here*/
 export const QuestionSection = styled.div`
   padding-top: 200px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 `;
 
@@ -135,6 +136,10 @@ export const Question = styled.a`
   margin-right: 260px;
   width: auto;
   margin-bottom: 30px;
+  &:hover {
+    text-decoration: none;
+    color: #707070;
+  }
 `;
 
 export const BoldBlack = styled.a`
