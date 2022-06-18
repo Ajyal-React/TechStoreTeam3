@@ -7,14 +7,16 @@ import TrendingCards from "../../components/Trending/TrendingCards"
 import Hero from '../../components/Hero/Hero'
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card";
+import Categories from "../../components/FeaturedCategories/Categories";
 
 const Home = () => {
   return (
     <HomeContainer>
       <Hero/>
-      <Featurecategories />
-      <Card />
-      <SingleSlider />
+      {/* <Featurecategories />
+      <Card /> */}
+      <Categories />
+      {/* <SingleSlider /> */}
       <OfferSection />
       <Featuredproducts />
       <TrendingCards/>

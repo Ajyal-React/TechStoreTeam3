@@ -25,19 +25,20 @@ export const ImgMulti = styled.div`
   display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin: 10px;
 `;
-export const CardPhone = styled.div`
-  padding: 8px 15px;
-    background-color: #F9F8F8;
-    width: 46%;
-    border-radius: 5px;
-    margin-right: 15px;
-`;
 
-export const Container = styled.div`
-width: 50%;
+export const Lines = styled.hr`
+  border: 1px solid rgba(128, 128, 128, 0.144);    
+margin: 2.5px 0;
 `;
-export const card = styled.sec`
-padding: 22px 40px;
+export const Icon = styled.p`
+    color: #7A7A7A;
+    font-size: small;
+    position: relative;
+`;
+export const ImgDimension = styled.img`
+    height: 160px;
+    width: 80px;
 `;

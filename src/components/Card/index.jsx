@@ -1,15 +1,15 @@
 import React from "react";
 import { AiFillHeart, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
-import { CardPhone, FlexBox, ImgMulti, Price, SubHeading } from "./index.style";
+import { CardPhone } from "../../GlobalStyles";
+import { FlexBox, Icon, ImgDimension, ImgMulti, Lines, Price, SubHeading } from "./index.style";
 
 function Card(props) {
 
 	return (
 		<CardPhone>
-			<div>
 				<AiFillHeart />
 				<ImgMulti>
-				<img src={`/Images/${props.img}.png`} className="img-multi" alt="logo" />
+				<ImgDimension src={`/Images/${props.img}.png`}  alt="logo" />
 				</ImgMulti>               
 
 				<FlexBox>
@@ -23,20 +23,19 @@ function Card(props) {
 						$99
 					</Price>
 				</FlexBox>
-				<hr className="lines" />
+				<Lines />
 				<FlexBox>
-					<p className="name-cust">
-						<AiFillStar className="ico-star" />
-						<AiFillStar className="ico-star" />
-						<AiFillStar className="ico-star" />
-						<AiFillStar className="ico-star" />
-						<AiFillStar className="ico-star" />
-					</p>
-					<p className="prev-price">
-						<AiOutlineShoppingCart  className="ico-shop" />
-					</p>
+					<Icon>
+						<AiFillStar  />
+						<AiFillStar  />
+						<AiFillStar  />
+						<AiFillStar  />
+						<AiFillStar  />
+					</Icon>
+					<Icon>
+						<AiOutlineShoppingCart  />
+					</Icon>
 				</FlexBox>
-			</div>
 		</CardPhone>
 	);
 }

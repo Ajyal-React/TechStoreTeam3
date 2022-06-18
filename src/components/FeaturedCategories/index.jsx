@@ -1,4 +1,3 @@
-
 import Card from "../Card";
 import {
     Nav,
@@ -12,7 +11,7 @@ import {
   } from "./index.style";
   
   
-  const Featurecategories =() => {
+  const TabCategory =() => {
     
     return (
       <Nav>
@@ -33,5 +32,4 @@ import {
     );
   };
   
-  export default Featurecategories;
-  
+  export default TabCategory;

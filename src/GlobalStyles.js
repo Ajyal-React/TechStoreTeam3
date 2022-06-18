@@ -83,3 +83,10 @@ export const Price = styled.p`
   text-align: center;
   background-color: #ffffff;
 `;
+export const CardPhone = styled.div`
+  padding: 8px 15px;
+    background-color: #F9F8F8;
+    border-radius: 5px;
+    margin-right: 15px;
+    width: ${({ width }) => (width ? width : "46%")};
+`;

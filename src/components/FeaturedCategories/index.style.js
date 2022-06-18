@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding: 0 140px;
+  /* padding: 0 140px; */
 `;
 export const Sec = styled.section`
   
@@ -50,5 +50,3 @@ export const BigTitle = styled("h5")`
   font-size: 30px;
   text-transform: uppercase;
 `;
-
-
