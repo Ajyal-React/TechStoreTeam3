@@ -1,5 +1,3 @@
-
-
 import {
   SliderSection,
   SliderTitle,
@@ -11,6 +9,53 @@ import SliderItem from "../SliderItem";
 import Slider from "react-slick";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
+import "./arrow.css";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        width: "42px",
+        height: "85px",
+        background: "#FA7400",
+        borderTopLeftRadius: "100px",
+        borderBottomLeftRadius: "100px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClick={onClick}
+    >
+      <img src="./images/arrow_slider.svg" alt="" />
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        width: "42px",
+        height: "85px",
+        background: "#FA7400",
+        borderTopRightRadius: "100px",
+        borderBottomRightRadius: "100px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClick={onClick}
+    >
+      <img src="./images/arrow_slider_left.svg" alt="" />
+    </div>
+  );
+}
 
 const Featuredproducts = (props) => {
   //Slick carousal settings starts here
@@ -21,10 +66,12 @@ const Featuredproducts = (props) => {
     slidesToShow: 4,
     slidesToScroll: 2,
     autoplay: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
   //Slick carousal settings ends here
 
-  //Products list array starts here 
+  //Products list array starts here
 
   const [Product] = useState([
     {
@@ -98,7 +145,7 @@ const Featuredproducts = (props) => {
       arrowIcon: <AiOutlineArrowRight />,
     },
   ]);
-  //Products list array ends here 
+  //Products list array ends here
 
   return (
     <SliderSection>
