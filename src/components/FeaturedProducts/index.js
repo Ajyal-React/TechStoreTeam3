@@ -9,6 +9,8 @@ import SliderItem from "../SliderItem";
 import Slider from "react-slick";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import './dots.css'
 import "./arrow.css";
 
 function SampleNextArrow(props) {
@@ -66,6 +68,8 @@ const Featuredproducts = (props) => {
     slidesToShow: 4,
     slidesToScroll: 2,
     autoplay: true,
+    dotsClass: "button__bar",
+    arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
@@ -164,7 +168,9 @@ const Featuredproducts = (props) => {
               price={el.price}
               moreInfo={el.moreInfo}
               arrowIcon={el.arrowIcon}
-            />
+            >
+              
+            </SliderItem>
           ))}
         </Slider>
       </SliderContent>
