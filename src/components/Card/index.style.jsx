@@ -42,7 +42,3 @@ export const ImgDimension = styled.img`
     height: 160px;
     width: 80px;
 `;
-
-
-
-

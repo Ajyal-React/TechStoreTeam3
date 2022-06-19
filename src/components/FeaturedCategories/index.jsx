@@ -1,4 +1,3 @@
-
 import Card from "../Card";
 import {
     Nav,
@@ -34,4 +33,3 @@ import {
   };
   
   export default TabCategory;
-  

@@ -50,5 +50,3 @@ export const BigTitle = styled("h5")`
   font-size: 30px;
   text-transform: uppercase;
 `;
-
-

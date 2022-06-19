@@ -6,7 +6,6 @@ import TrendingCards from "../../components/Trending/TrendingCards"
 import Hero from '../../components/Hero/Hero'
 import Footer from "../../components/Footer/Footer";
 import Categories from "../../components/FeaturedCategories/Categories";
-// import ShowFeatured from "../../components/ShowFeatured";
 
 const Home = () => {
   return (

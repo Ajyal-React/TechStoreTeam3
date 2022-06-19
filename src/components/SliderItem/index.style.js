@@ -95,4 +95,5 @@ export const Text = styled.span`
 
 export const Arrow = styled.span`
   margin-right: 30px;
+  margin-top: 7px;
 `;

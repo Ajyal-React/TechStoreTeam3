@@ -91,3 +91,4 @@ export const CardPhone = styled.div`
     width: ${({ width }) => (width ? width : "46%")};
 
 `;
+
