@@ -68,7 +68,7 @@ const Featuredproducts = (props) => {
     slidesToShow: 4,
     slidesToScroll: 2,
     autoplay: true,
-    dotsClass: "button__bar",
+    dotsClass: "dots",
     arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,

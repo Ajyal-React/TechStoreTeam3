@@ -1,19 +1,17 @@
-.button__bar {
-    position: absolute;
-    /* top: 370px;
-    right: 690px; */
+.dots {
+    margin: 0 auto;
     border-radius: 50%;
     text-align: center;
 }
 
-.button__bar li {
+.dots li {
     list-style: none;
     cursor: pointer;
     display: inline-block;
     margin: 0 3px;
 }
 
-.button__bar li button {
+.dots li button {
     border: none;
     background: #AFAFAF;
     color: transparent;
@@ -26,7 +24,7 @@
     transition: all 0.3s ease-out;
 }
 
-.button__bar li.slick-active button {
+.dots li.slick-active button {
     width: 22px;
     background-color: #FA7400;
     opacity: 80%;

@@ -8,7 +8,7 @@ export const NavSection = styled.div`
   line-height: normal;
   align-items: center;
   opacity: 0.79;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   width: 100%;
 `;
