@@ -10,7 +10,6 @@ import {
   FormSection,
   LoginForm,
   LoginText,
-  Input,
   LoginButton,
   LoginIcon,
   Question,
@@ -19,7 +18,6 @@ import {
 } from "./index.style";
 
 /* import { HiMail } from "react-icons/hi"; */
-import { TextField } from "@mui/material";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
@@ -44,55 +42,7 @@ const LogIn = () => {
         <FormSection>
           <LoginForm>
             <LoginText>login</LoginText>
-            {/*  <Input
-            label="Filled"
-            variant="filled"
-            placeHolder="Email"
-            Name="email"
-            Type="email"
-          />
-          <Input Name="email" Type="password" /> */}
-            <TextField
-              focused
-              id="filled-basic"
-              label="&#9993; Email"
-              variant="filled"
-              sx={{
-                width: "70%",
-                backgroundColor: "#FFFFFF",
-                boxShadow: "10px 12px 20px #000000 0.8;",
-                border: "none",
-                marginBottom: "18px",
-                "&:focus": {
-                  outline: "none !important",
-                  borderColor: "#719ECE",
-                  boxShadow: "0 0 10px #719ECE",
-                  borderLeft: "5px solid #ff0",
-                },
-              }}
-              placeholder="&#9993; Email"
-              type="email"
-              //To direct the user start filling the fields without needing click on the field by mouse
-              inputProps={{ autoFocus: true }}
-            />
-            <TextField
-              id="filled-basic"
-              label="&#9993; Password"
-              variant="filled"
-              sx={{
-                width: "70%",
-                backgroundColor: "#FFFFFF",
-                boxShadow: "0 0 10px #719ECE 0.8;",
-                border: "none",
-                "&:focus ": {
-                  outline: "none !important",
-                  borderColor: "#719ECE",
-                  borderLeft: "5px solid #F6921E",
-                },
-              }}
-              placeholder="&#9993; Password"
-              type="password"
-            />
+
             <span
               style={{
                 fontSize: "14px",
