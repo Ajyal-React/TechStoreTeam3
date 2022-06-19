@@ -89,4 +89,6 @@ export const CardPhone = styled.div`
     border-radius: 5px;
     margin-right: 15px;
     width: ${({ width }) => (width ? width : "46%")};
+
 `;
+
