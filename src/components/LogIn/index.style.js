@@ -114,11 +114,11 @@ export const LoginButton = styled.button`
 `;
 
 export const LoginIcon = styled.img`
-  margin-bottom: -6px;
-  width: 10%;
+  width: 30%;
+  margin-bottom: -7px;
   &:hover {
-    width: 11%;
-    margin-left: 10px;
+    width: 29.5%;
+    margin-left: 5px;
   }
 `;
 /*FormSection ends here*/
@@ -148,3 +148,26 @@ export const BoldBlack = styled.a`
   text-decoration: none;
 `;
 /*Question ends here*/
+
+export const CustomizeForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const InputContainer = styled.div `
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`;
+
+export const Icon = styled.div`
+  position: absolute;
+  left: 10px;
+  top:27px;
+`;

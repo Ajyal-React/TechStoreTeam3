@@ -10,7 +10,7 @@ import Slider from "react-slick";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './style.css'
+import "./style.css";
 import "./arrow.css";
 
 function SampleNextArrow(props) {
@@ -72,6 +72,32 @@ const Featuredproducts = (props) => {
     arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   //Slick carousal settings ends here
 
@@ -161,16 +187,16 @@ const Featuredproducts = (props) => {
       <SliderContent>
         <Slider {...settings}>
           {Product.map((el) => (
-            <SliderItem
-              key={el.id}
-              source={el.image}
-              title={el.title}
-              price={el.price}
-              moreInfo={el.moreInfo}
-              arrowIcon={el.arrowIcon}
-            >
-              
-            </SliderItem>
+            <Link to="/ProductDetails">
+              <SliderItem
+                key={el.id}
+                source={el.image}
+                title={el.title}
+                price={el.price}
+                moreInfo={el.moreInfo}
+                arrowIcon={el.arrowIcon}
+              ></SliderItem>
+            </Link>
           ))}
         </Slider>
       </SliderContent>
