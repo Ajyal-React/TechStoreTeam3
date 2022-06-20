@@ -187,7 +187,6 @@ const Featuredproducts = (props) => {
       <SliderContent>
         <Slider {...settings}>
           {Product.map((el) => (
-            <Link to="/ProductDetails">
               <SliderItem
                 key={el.id}
                 source={el.image}
@@ -196,7 +195,6 @@ const Featuredproducts = (props) => {
                 moreInfo={el.moreInfo}
                 arrowIcon={el.arrowIcon}
               ></SliderItem>
-            </Link>
           ))}
         </Slider>
       </SliderContent>

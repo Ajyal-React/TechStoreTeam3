@@ -12,11 +12,41 @@ export const LeftSection = styled.div`
   width: 35%;
   height: 100vh;
   background-image: url("images/GradientBg.svg");
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   padding-left: 125px;
+  min-width: 300px;
+  @media (max-width: 341px) {
+    width: 100%;
+    background-color: red;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (min-width: 1400px) {
+  }
+
+  @media (max-width: 950px) {
+  }
 `;
 
 export const Image = styled.img`
@@ -58,8 +88,34 @@ export const FormSection = styled.section`
   flex-direction: column;
   justify-content: end;
   align-items: center;
+  flex-wrap: wrap;
   height: 100%;
   background-color: #f3f3f3;
+  min-width: 500px;
+  @media (max-width: 341px) {
+    width: 100%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 992px) {
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (min-width: 1400px) {
+  }
+
+  @media (max-width: 950px) {
+  }
 `;
 
 export const LoginForm = styled.form`
@@ -150,14 +206,15 @@ export const BoldBlack = styled.a`
 /*Question ends here*/
 
 export const CustomizeForm = styled.div`
+width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 `;
 
-export const InputContainer = styled.div `
-  width: 100%;
+export const InputContainer = styled.div`
+  width: 70%;
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -169,5 +226,56 @@ export const InputContainer = styled.div `
 export const Icon = styled.div`
   position: absolute;
   left: 10px;
-  top:27px;
+  top: 27px;
+`;
+
+export const InputBox = styled.div`
+  position: relative;
+  margin-top: 10px;
+  width: 50%;
+  border: none;
+  input {
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    box-shadow: 0px 12px 20px #00000014;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-left: 30px;
+    &::placeholder {
+      color: transparent;
+    }
+    &:placeholder-shown ~ label {
+      font-size: 14px;
+      cursor: text;
+      top: 20px;
+    }
+  }
+  label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 14px;
+    color: #9b9b9b;
+    padding-left: 30px;
+  }
+  input:focus {
+    ~ label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 14px;
+      color: #9b9b9b;
+    }
+    border-left: 8px solid #fa7400;
+  }
+  input {
+    &:required,
+    &:invalid {
+      box-shadow: none;
+    }
+  }
 `;
