@@ -1,7 +1,6 @@
 //Styled component for the "Featured products" is here
 
 import styled from "styled-components";
-import { devices } from "../../General/MediaQuery.style";
 
 export const SliderSection = styled.div`
   width: 100%;
@@ -40,5 +39,35 @@ export const TopTitle = styled.div`
   align-items: flex-start;
   margin: 0 auto;
   width: 80%;
-`;
 
+  @media (max-width: 341px) {
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 576px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 992px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1400px) {
+  }
+
+  @media (max-width: 950px) {
+  }
+`;
