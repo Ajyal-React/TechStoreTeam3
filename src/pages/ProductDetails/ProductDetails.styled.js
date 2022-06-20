@@ -9,7 +9,7 @@ export const ProductDetailsContainer = styled.div`
 
 export const DetailsContent = styled.div`
   margin: 40px 140px;
-  margin-top:180px;
+  margin-top: 180px;
   display: flex;
   gap: 50px;
   ${mobile(css`
@@ -20,6 +20,12 @@ export const DetailsContent = styled.div`
       margin: 40px;
     `,
     800
+  )}
+    ${mobile(
+    css`
+      margin: 20px;
+    `,
+    350
   )}
 `;
 
@@ -38,6 +44,13 @@ export const ImageDisplay = styled.img`
   border: 0.3px solid #c1c1c1;
   margin-bottom: 12px;
   object-fit: contain;
+  ${mobile(
+    css`
+      height: 300px;
+      padding: 50px;
+    `,
+    600
+  )}
 `;
 
 export const SmImageBox = styled.div`
@@ -49,6 +62,20 @@ export const SmImageBox = styled.div`
   border-radius: 9px;
   padding: 10px;
   border: 0.3px solid #c1c1c1;
+  ${mobile(
+    css`
+      max-width: 100px;
+      max-height: 80px;
+    `,
+    1200
+  )}
+  ${mobile(
+    css`
+      max-width: 80px;
+      max-height: 60px;
+    `,
+    520
+  )}
 `;
 export const SmImageDisplay = styled.img`
   width: 100%;
@@ -60,9 +87,12 @@ export const SmImageDisplay = styled.img`
 
 export const RowGap = styled(Row)`
   gap: ${({ gap }) => gap};
-  ${mobile(css`
-    flex-wrap: wrap;
-  `,580)}
+  ${mobile(
+    css`
+      flex-wrap: wrap;
+    `,
+    580
+  )}
 `;
 
 export const ProductTitle = styled.h1`
