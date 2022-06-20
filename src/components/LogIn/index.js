@@ -59,16 +59,26 @@ const LogIn = () => {
         <FormSection>
           <LoginForm>
             <LoginText>login</LoginText>
-            <form onSubmit={formik.handleSubmit}>
+            <form
+              style={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "start",
+              }}
+              onSubmit={formik.handleSubmit}
+            >
               <CustomizeForm>
                 <InputContainer>
-                  <Icon>
+                  {/*  <Icon>
                     <HiMail style={{ color: "#B9B9B9" }} />
-                  </Icon>
+                  </Icon> */}
+
                   <input
                     style={{
-                      boxShadow: "0px 12px 20px #E0E0E0",
                       width: "100%",
+                      boxShadow: "0px 12px 20px #E0E0E0",
                       height: "100%",
                       paddingLeft: "30px",
                       marginBottom: "20px",
@@ -83,11 +93,10 @@ const LogIn = () => {
                     name="email"
                     type="email"
                     onChange={formik.handleChange}
-                    /* onBlur={formik.handleBlur('email')} */
                     onBlur={({ target: { values } }) => {
                       if (!formik.values.email) {
                         setMessage(true);
-                        ErrorMessage.email = "Email address is required";
+                        ErrorMessage.email = "Email address is required!";
                       } else if (
                         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
                           formik.values.email
@@ -95,9 +104,8 @@ const LogIn = () => {
                       ) {
                         setMessage(true);
                         ErrorMessage.email = "Invalid email address";
-                      }
-                      else{
-                        setMessage(false)
+                      } else {
+                        setMessage(false);
                       }
                     }}
                     value={formik.values.email}
@@ -109,8 +117,9 @@ const LogIn = () => {
                   <span
                     style={{
                       color: "red",
-                      fontSize: "16px",
-                      marginRight: "140px",
+                      fontSize: "14px",
+                      marginRight: "250px",
+                      marginTop: "5px",
                     }}
                   >
                     {ErrorMessage.email}
@@ -122,6 +131,7 @@ const LogIn = () => {
                   </Icon>
                   <input
                     style={{
+                      width: "100%",
                       boxShadow: "0px 12px 20px #E0E0E0",
                       width: "100%",
                       height: "100%",
@@ -152,28 +162,6 @@ const LogIn = () => {
                 </LoginButton>
               </CustomizeForm>
             </form>
-            {/* <span
-              style={{
-                fontSize: "14px",
-                textDecoration: "none",
-                marginTop: "-40px",
-                marginLeft: "425px",
-                zIndex: "2",
-              }}
-            >
-              <a
-                style={{
-                  color: "#22B9FF",
-                  textDecoration: "none",
-                  backgroundColor: "trasnparent",
-                  fontWeight: "bold",
-                  fontSize: "12px",
-                }}
-                href="\#"
-              >
-                FORGET?
-              </a>
-            </span> */}
           </LoginForm>
           <QuestionSection>
             <Question>
