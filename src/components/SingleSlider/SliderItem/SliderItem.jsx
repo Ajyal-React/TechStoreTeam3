@@ -15,7 +15,7 @@ const SliderItem = ({ itemData }) => {
         </Row>
         <SliderImage src={itemData.image} />
         <Row justify="space-between">
-          <Text fontSize="37px" weight="600">
+          <Text fontSize="37px" weight="600" lg>
             {itemData.title}
           </Text>
           <Price>{itemData.price}</Price>
