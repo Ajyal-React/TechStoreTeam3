@@ -59,7 +59,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-const Featuredproducts = (props) => {
+const Featuredproducts = ({ featuredProducts }) => {
   //Slick carousal settings starts here
   const settings = {
     dots: true,
@@ -103,78 +103,60 @@ const Featuredproducts = (props) => {
 
   //Products list array starts here
 
-  const [Product] = useState([
-    {
-      id: "1",
-      image: "Images/wristwatch.PNG",
-      title: "Smart Watch",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "2",
-
-      image: "Images/controller.PNG",
-      title: "Games Arm",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "3",
-
-      image: "images/laptop.PNG",
-      title: "Mac Laptop",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "4",
-
-      image: "Images/bag.PNG",
-      title: "Back Bag",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "5",
-      image: "Images/wristwatch.PNG",
-      title: "Smart Watch",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "6",
-
-      image: "Images/controller.PNG",
-      title: "Games Arm",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "7",
-
-      image: "images/laptop.PNG",
-      title: "Mac Laptop",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-    {
-      id: "8",
-
-      image: "Images/bag.PNG",
-      title: "Back Bag",
-      price: "$20",
-      moreInfo: "moreInfo",
-      arrowIcon: <AiOutlineArrowRight />,
-    },
-  ]);
+  const [Product] = useState(
+    featuredProducts
+  
+      //  [
+      //     {
+      //       _id: "1",
+      //       images: "Images/wristwatch.PNG",
+      //       name: "Smart Watch",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "2",
+      //       images: "Images/controller.PNG",
+      //       name: "Games Arm",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "3",
+      //       images: "images/laptop.PNG",
+      //       name: "Mac Laptop",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "4",
+      //       images: "Images/bag.PNG",
+      //       name: "Back Bag",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "5",
+      //       images: "Images/wristwatch.PNG",
+      //       name: "Smart Watch",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "6",
+      //       images: "Images/controller.PNG",
+      //       name: "Games Arm",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "7",
+      //       images: "images/laptop.PNG",
+      //       name: "Mac Laptop",
+      //       price: "20",
+      //     },
+      //     {
+      //       _id: "8",
+      //       images: "Images/bag.PNG",
+      //       name: "Back Bag",
+      //       price: "20",
+      //     },
+      //   ]
+  );
   //Products list array ends here
 
   return (
@@ -187,14 +169,12 @@ const Featuredproducts = (props) => {
       <SliderContent>
         <Slider {...settings}>
           {Product.map((el) => (
-              <SliderItem
-                key={el.id}
-                source={el.image}
-                title={el.title}
-                price={el.price}
-                moreInfo={el.moreInfo}
-                arrowIcon={el.arrowIcon}
-              ></SliderItem>
+            <SliderItem
+              key={el.id}
+              source={el.images}
+              title={el.name}
+              price={el.price}
+            ></SliderItem>
           ))}
         </Slider>
       </SliderContent>
