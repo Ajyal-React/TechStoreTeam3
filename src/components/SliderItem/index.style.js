@@ -38,9 +38,13 @@ export const Image = styled.img`
 `;
 
 export const ItemTitle = styled.span`
+  width: 100%;
   font-size: 16px;
   color: #111111;
   font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const SliderItemPrice = styled.span`
