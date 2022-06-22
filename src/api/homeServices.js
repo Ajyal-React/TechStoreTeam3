@@ -15,8 +15,22 @@ const getFeaturedProducts = async () => {
   }
 };
 
+const getFeaturedCategories = async () => {
+  try {
+    const response = await axios.get(API_URL + "products/featured-categories");
+    return { isSuccess: true, data: response.data };
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    return { isError: true, errorMessage: message };
+  }
+};
+
 const homeService = {
   getFeaturedProducts,
+  getFeaturedCategories,
 };
 
 export default homeService;

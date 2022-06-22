@@ -3,10 +3,18 @@ import TabCategory from ".";
 
 import Card from "../Card";
 import SingleSlider from "../SingleSlider/SingleSlider";
-import { AllCard, Button2, Center, Container, ContainerCard, FlexBox, MainContainer, SliderDiv } 
-from "./Categories.style";
+import {
+  AllCard,
+  Button2,
+  Center,
+  Container,
+  ContainerCard,
+  FlexBox,
+  MainContainer,
+  SliderDiv,
+} from "./Categories.style";
 
-function Categories() {
+function Categories({ featuredCategories }) {
   return (
     <MainContainer>
       <ContainerCard>
@@ -20,7 +28,7 @@ function Categories() {
               <Card img={"phone1"} />
             </AllCard>
             {/* <SliderDiv> */}
-              <SingleSlider />
+            <SingleSlider dataItems={featuredCategories[0]} />
             {/* </SliderDiv> */}
           </FlexBox>
           <Center>
@@ -35,4 +43,3 @@ function Categories() {
 }
 
 export default Categories;
-
