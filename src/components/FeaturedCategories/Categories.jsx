@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import TabCategory from ".";
 
 import Card from "../Card";
@@ -32,9 +33,11 @@ function Categories({ featuredCategories }) {
             {/* </SliderDiv> */}
           </FlexBox>
           <Center>
+          <Link to="/Category">
             <Button2 borderRadius="3px" bgColor="white" className="btn">
               View More Laptops
             </Button2>
+            </Link>
           </Center>
         </Container>
       </ContainerCard>
