@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { mobile } from "../../../utils/media";
+import { Text } from "../../../GlobalStyles";
 
 export const SliderContainer = styled.div`
   padding: 22px 40px;
@@ -65,4 +66,11 @@ export const DiscountPrice = styled.p`
     `,
     450
   )}
+`;
+
+export const Name = styled(Text)`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 10px;
 `;

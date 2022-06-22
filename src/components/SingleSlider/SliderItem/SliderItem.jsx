@@ -3,6 +3,7 @@ import {
   Discount,
   SliderImage,
   DiscountPrice,
+  Name,
 } from "./SliderItem.styled";
 import { Row, Column, Text, Price } from "../../../GlobalStyles";
 
@@ -15,9 +16,9 @@ const SliderItem = ({ itemData }) => {
         </Row>
         <SliderImage src={itemData.image} />
         <Row justify="space-between">
-          <Text fontSize="37px" weight="600" lg>
+          <Name fontSize="37px" weight="600" lg>
             {itemData.title}
-          </Text>
+          </Name>
           <Price>{itemData.price}</Price>
         </Row>
         <Row margin="15px 0px 0px 0px" justify="space-between" align="center">

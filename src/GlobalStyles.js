@@ -81,8 +81,9 @@ export const Text = styled.p`
 `;
 
 export const Price = styled.p`
-  width: ${({ w }) => (w ? w : "93px")};
-  height: ${({ h }) => (h ? h : "50px")};
+  /* width: ${({ w }) => (w ? w : "93px")}; */
+  padding: 0px 15px;
+  height: min-content;
   line-height: ${({ h }) => (h ? h : "50px")};
   font-size: ${({ fsize }) => (fsize ? fsize : "23px")};
   color: #0ea965;
