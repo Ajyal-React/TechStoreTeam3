@@ -24,21 +24,22 @@ import { HiMail } from "react-icons/hi";
 import { FaLock } from "react-icons/fa";
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { ErrorMessage, useFormik } from "formik";
+import { ErrorMessage, Field, Form, Formik, useFormik } from "formik";
 
 const LogIn = () => {
+  /*   const [fieldValue, setFieldValue] = useState("");
+   */ const [message, setMessage] = useState(false);
+
   const formik = useFormik({
     initialValues: {
+      firstName: "",
+      lastName: "",
       email: "",
-      password: "",
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
-
-  /*   const [fieldValue, setFieldValue] = useState("");
-   */ const [message, setMessage] = useState(false);
   return (
     <Fragment>
       {/*Login container starts here*/}
@@ -59,7 +60,49 @@ const LogIn = () => {
         <FormSection>
           <LoginForm>
             <LoginText>login</LoginText>
-            <form
+            {/*Formik starts here*/}
+          
+            {/*Formik ends here*/}
+
+            <LoginButton>
+              <button
+                style={{ border: "none", cursor: "pointer" }}
+                type="submit"
+              >
+                login <LoginIcon src="images/arrow.svg" />
+              </button>
+            </LoginButton>
+          </LoginForm>
+          <QuestionSection>
+            <Question>
+              Don't have account?
+              <BoldBlack href="#">
+                <Link
+                  to="/signup"
+                  style={{
+                    textDecoration: "none",
+                    color: "#3b3b3b",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Sgin up
+                </Link>
+              </BoldBlack>
+            </Question>
+          </QuestionSection>
+        </FormSection>
+
+        {/*Form section starts here*/}
+      </Container>
+      {/*Login container ends here*/}
+    </Fragment>
+  );
+};
+
+export default LogIn;
+
+{
+  /* <form
               style={{
                 width: "100%",
                 display: "flex",
@@ -71,9 +114,9 @@ const LogIn = () => {
             >
               <CustomizeForm>
                 <InputContainer>
-                  {/*  <Icon>
+                    <Icon>
                     <HiMail style={{ color: "#B9B9B9" }} />
-                  </Icon> */}
+                  </Icon> 
 
                   <input
                     style={{
@@ -161,32 +204,5 @@ const LogIn = () => {
                   </button>
                 </LoginButton>
               </CustomizeForm>
-            </form>
-          </LoginForm>
-          <QuestionSection>
-            <Question>
-              Don't have account?
-              <BoldBlack href="#">
-                <Link
-                  to="/signup"
-                  style={{
-                    textDecoration: "none",
-                    color: "#3b3b3b",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Sgin up
-                </Link>
-              </BoldBlack>
-            </Question>
-          </QuestionSection>
-        </FormSection>
-
-        {/*Form section starts here*/}
-      </Container>
-      {/*Login container ends here*/}
-    </Fragment>
-  );
-};
-
-export default LogIn;
+            </form> */
+}

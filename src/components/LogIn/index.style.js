@@ -206,7 +206,7 @@ export const BoldBlack = styled.a`
 /*Question ends here*/
 
 export const CustomizeForm = styled.div`
-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
