@@ -118,7 +118,7 @@ export const FormSection = styled.section`
   }
 `;
 
-export const LoginForm = styled.form`
+export const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,11 +170,11 @@ export const LoginButton = styled.button`
 `;
 
 export const LoginIcon = styled.img`
-  width: 30%;
-  margin-bottom: -7px;
+  width: 20%;
+  margin-bottom: -14px;
   &:hover {
-    width: 29.5%;
-    margin-left: 5px;
+    width: 20.1%;
+    margin-left: 3px;
   }
 `;
 /*FormSection ends here*/
@@ -278,4 +278,18 @@ export const InputBox = styled.div`
       box-shadow: none;
     }
   }
+`;
+
+export const Msg = styled.div`
+  width: 100%;
+`;
+
+export const MsgText = styled.p`
+  font-size: 14px;
+  color: red;
+`;
+
+export const SuccessMsg = styled.p`
+  font-size: 14px;
+  color: green;
 `;
