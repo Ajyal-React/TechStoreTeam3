@@ -3,6 +3,7 @@ import { Home, ProductDetails } from "./pages";
 import GlobalStyle from "./GlobalStyles";
 import LogIn from "./components/LogIn/index";
 import SignUp from "./components/SignUp";
+import ShowFeatured from "./components/ShowFeatured";
 import Search from "./General/Search";
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         {/* <Route path="/Search" element={<Search />} /> */}
+        <Route path="/Category" element={<ShowFeatured />} />
+
       </Routes>
     </BrowserRouter>
   );
