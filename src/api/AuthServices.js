@@ -10,6 +10,7 @@ const authLoginPage = async (user) => {
       (error.response && error.response.data && error.response.data.message) ||
       error.message ||
       error.toString();
+
     return { isError: true, errorMessage: message };
   }
 };
