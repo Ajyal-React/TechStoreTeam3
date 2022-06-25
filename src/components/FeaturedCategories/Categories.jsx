@@ -1,6 +1,5 @@
-import React from "react";
-import TabCategory from ".";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "../Card";
 import SingleSlider from "../SingleSlider/SingleSlider";
 import {
@@ -22,19 +21,21 @@ function Categories({ featuredCategories }) {
           <TabCategory />
           <FlexBox>
             <AllCard>
-              <Card img={"phone1"} />
-              <Card img={"phone3"} />
-              <Card img={"phone4"} />
-              <Card img={"phone1"} />
+              <Card img="phone4" />
+              <Card img="phone3" />
+              <Card img="phone3" />
+              <Card img="phone4" />
             </AllCard>
             {/* <SliderDiv> */}
             <SingleSlider dataItems={featuredCategories[0]} />
             {/* </SliderDiv> */}
           </FlexBox>
           <Center>
+          <Link to="/Category">
             <Button2 borderRadius="3px" bgColor="white" className="btn">
               View More Laptops
             </Button2>
+            </Link>
           </Center>
         </Container>
       </ContainerCard>

@@ -6,22 +6,18 @@ import Hero from "../../components/Hero/Hero";
 import Footer from "../../components/Footer/Footer";
 import Categories from "../../components/FeaturedCategories/Categories";
 import { useEffect, useState } from "react";
-import homeServices from "../../api/homeServices";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../redux/actions/productsActions";
+import { getCategories } from "../../redux/actions/categoriesActions";
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [featuredCategories, setFeaturedCategories] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.categoriesReducer);
+  const products = useSelector((state) => state.productsReducer);
 
-  const getFeaturedProducts = async () => {
-    const res = await homeServices.getFeaturedProducts();
-    if (res?.isSuccess) {
-      setFeaturedProducts(res.data);
-    } else if (res?.isError) {
-      setErrorMessage(res.errorMessage);
-    }
-  };
-  
   const getFeaturedCategories = async () => {
     const res = await homeServices.getFeaturedCategories();
     if (res?.isSuccess) {
@@ -32,14 +28,32 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getFeaturedProducts();
-    getFeaturedCategories();
+    dispatch(getProducts());
+    dispatch(getCategories());
   }, []);
+
+  useEffect(() => {
+    if (products.isSuccuss) {
+      setFeaturedProducts(products.data);
+    }
+    if (categories.isSuccuss) {
+      setFeaturedCategories(categories.data);
+    }
+  }, [
+    categories.data,
+    categories.isSuccuss,
+    categories.error,
+    products.data,
+    products.isSuccuss,
+    products.error,
+  ]);
 
   return (
     <HomeContainer>
       <Hero />
-      <Categories featuredCategories={featuredCategories} />
+      {featuredProducts.length > 0 && (
+        <Categories featuredCategories={featuredCategories} />
+      )}
       <OfferSection />
       {featuredProducts.length > 0 && (
         <Featuredproducts featuredProducts={featuredProducts} />
