@@ -21,7 +21,7 @@ const Home = () => {
       setErrorMessage(res.errorMessage);
     }
   };
-  
+
   const getFeaturedCategories = async () => {
     const res = await homeServices.getFeaturedCategories();
     if (res?.isSuccess) {
@@ -39,7 +39,9 @@ const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      <Categories featuredCategories={featuredCategories} />
+      {featuredProducts.length > 0 && (
+        <Categories featuredCategories={featuredCategories} />
+      )}
       <OfferSection />
       {featuredProducts.length > 0 && (
         <Featuredproducts featuredProducts={featuredProducts} />

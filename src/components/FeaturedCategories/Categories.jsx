@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TabCategory from ".";
 
 import Card from "../Card";
@@ -15,6 +15,9 @@ import {
 } from "./Categories.style";
 
 function Categories({ featuredCategories }) {
+  const [data, setData] = useState(
+    featuredCategories.filter((item, index) => index !== 0)
+  );
   return (
     <MainContainer>
       <ContainerCard>
@@ -22,10 +25,9 @@ function Categories({ featuredCategories }) {
           <TabCategory />
           <FlexBox>
             <AllCard>
-              <Card img={"phone1"} />
-              <Card img={"phone3"} />
-              <Card img={"phone4"} />
-              <Card img={"phone1"} />
+              {data.map((item) => (
+                <Card item={item} />
+              ))}
             </AllCard>
             {/* <SliderDiv> */}
             <SingleSlider dataItems={featuredCategories[0]} />
