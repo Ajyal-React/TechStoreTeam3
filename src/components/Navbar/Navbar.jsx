@@ -9,11 +9,7 @@ import {
   Logo,
   SpanIcon,
   BtnSginIn,
-  ContainerSearch,
-  SearchInput,
-  SearchIcon,
-  Tags,
-  Tag,
+
 } from "../Navbar/Navbar.styled";
 import { Link } from "react-router-dom";
 
@@ -36,7 +32,6 @@ const Navbar = () => {
           <List>Mobiles</List>
         </ul>
       </NavbarList>
-      {/* <a href="#"><Logo src="images/logo.png" /></a> */}
       <Logo src="images/logo.png" />
       <NavbarList marginLeft="2%">
         <ul>

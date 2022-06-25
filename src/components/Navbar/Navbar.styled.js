@@ -11,6 +11,9 @@ export const NavSection = styled.div`
   z-index: 2;
   position: fixed;
   width: 100%;
+  @media (max-width: 1200px) {
+    padding: 15px;
+  }
 `;
 
 export const SelectOpctions = styled.select`
@@ -49,6 +52,10 @@ export const List = styled.li`
   &:active {
     color: #fa7400;
   }
+  @media (max-width: 950px) {
+    font-size: 16px;
+    margin-left: 0%;
+  }
 `;
 
 export const Logo = styled.img`
@@ -74,69 +81,69 @@ export const BtnSginIn = styled.button`
 `;
 
 //Search overlay starts here
-export const ContainerSearch = styled.div`
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  background-color: transparent;
-`;
+// export const ContainerSearch = styled.div`
+//   width: 50%;
+//   height: 50%;
+//   position: absolute;
+//   top: 25%;
+//   left: 25%;
+//   background-color: transparent;
+// `;
 
-export const SearchInput = styled.input`
-  border: none;
-  width: 90%;
-  height: 20%;
-  background-color: transparent;
-  border-left: 4px solid #ffffff;
-  border-bottom: 0.1px solid #f8f8f8;
-  padding-left: 20px;
-  outline: none;
-  color: #fa7400;
-  font-size: 25px;
-  position: relative;
-  margin-bottom: 30px;
+// export const SearchInput = styled.input`
+//   border: none;
+//   width: 90%;
+//   height: 20%;
+//   background-color: transparent;
+//   border-left: 4px solid #ffffff;
+//   border-bottom: 0.1px solid #f8f8f8;
+//   padding-left: 20px;
+//   outline: none;
+//   color: #fa7400;
+//   font-size: 25px;
+//   position: relative;
+//   margin-bottom: 30px;
 
-  &::placeholder {
-    font-size: 25px;
-    color: #eeeeee;
-  }
-`;
+//   &::placeholder {
+//     font-size: 25px;
+//     color: #eeeeee;
+//   }
+// `;
 
-export const SearchIcon = styled.div`
-  color: #ffffff;
-  font-size: 30px;
-  position: absolute;
-  left: 630px;
-  top: 25px;
-  cursor: pointer;
-`;
+// export const SearchIcon = styled.div`
+//   color: #ffffff;
+//   font-size: 30px;
+//   position: absolute;
+//   left: 630px;
+//   top: 25px;
+//   cursor: pointer;
+// `;
 
-export const Tags = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: start;
-  align-items: flex-start;
-`;
+// export const Tags = styled.ul`
+//   display: flex;
+//   flex-direction: row;
+//   list-style-type: none;
+//   justify-content: start;
+//   align-items: flex-start;
+// `;
 
-export const Tag = styled.li`
-  color: #ffffff;
-  width: 20%;
-  font-size: 15px;
-  border: 1px solid #ffffff;
-  padding: 10px 0px;
-  background-color: transparent;
-  min-width: 10%;
-  border-radius: 50px;
-  text-align: center;
-  margin-right: 10px;
-  cursor: pointer;
+// export const Tag = styled.li`
+//   color: #ffffff;
+//   width: 20%;
+//   font-size: 15px;
+//   border: 1px solid #ffffff;
+//   padding: 10px 0px;
+//   background-color: transparent;
+//   min-width: 10%;
+//   border-radius: 50px;
+//   text-align: center;
+//   margin-right: 10px;
+//   cursor: pointer;
 
-  &:hover {
-    font-size: 14px;
-    color: #fa7400;
-    box-sizing: border-box;
-  }
-`;
+//   &:hover {
+//     font-size: 14px;
+//     color: #fa7400;
+//     box-sizing: border-box;
+//   }
+// `;
 //Search overlay ends here
