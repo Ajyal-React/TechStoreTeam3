@@ -10,7 +10,8 @@ import homeServices from "../../api/homeServices";
 import AuthServices from "../../api/AuthServices";
 
 const Home = () => {
-  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredProducts, setFeaturedProducts, setFeaturedCategories] =
+    useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
   const getFeaturedProducts = async () => {
@@ -22,11 +23,19 @@ const Home = () => {
     }
   };
 
-
+  const getFeaturedCategories = async () => {
+    const res = await homeServices.getFeaturedCategories();
+    if (res?.isSuccess) {
+      setFeaturedCategories(res.data);
+    } else if (res?.isError) {
+      setErrorMessage(res.errorMessage);
+    }
+  };
 
   useEffect(() => {
     getFeaturedProducts();
-      }, []);
+    getFeaturedCategories();
+  }, []);
 
   return (
     <HomeContainer>
