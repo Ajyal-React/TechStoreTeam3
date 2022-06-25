@@ -22,7 +22,7 @@ import {
   Msg,
   MsgText,
 } from "./index.style";
-
+import { useDispatch, useSelector } from "react-redux";
 import { HiMail } from "react-icons/hi";
 import { FaLock } from "react-icons/fa";
 import { Fragment, useState } from "react";
@@ -48,12 +48,18 @@ const validate = yup.object().shape({
 const LogIn = () => {
   const [formValues, setFormValues] = useState();
 
+  const dispatch = useDispatch();
+  const { data, isSuccuss, error } = useSelector((state) => state.loginReducer);
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     onSubmit: (values) => {
+      if (!user.email || !user.password) return;
+        dispatch(login(user));
+        setUser(initialValues);
       /* console.log('values' , values)
       alert(JSON.stringify(values, null, 2));
       console.log("values are", values); */
