@@ -15,9 +15,6 @@ import {
 } from "./Categories.style";
 
 function Categories({ featuredCategories }) {
-  const [data, setData] = useState(
-    featuredCategories.filter((item, index) => index !== 0)
-  );
   return (
     <MainContainer>
       <ContainerCard>
@@ -25,9 +22,10 @@ function Categories({ featuredCategories }) {
           <TabCategory />
           <FlexBox>
             <AllCard>
-              {data.map((item) => (
-                <Card item={item} />
-              ))}
+              <Card img="phone4" />
+              <Card img="phone3" />
+              <Card img="phone3" />
+              <Card img="phone4" />
             </AllCard>
             {/* <SliderDiv> */}
             <SingleSlider dataItems={featuredCategories[0]} />

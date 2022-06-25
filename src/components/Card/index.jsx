@@ -1,4 +1,3 @@
-import React from "react";
 import { AiFillHeart, AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
 import { CardPhone } from "../../GlobalStyles";
 import {
@@ -12,16 +11,15 @@ import {
 } from "./index.style";
 
 function Card(props) {
-	
   return (
     <CardPhone>
       <AiFillHeart />
       <ImgMulti>
-        <ImgDimension src={props.item.images} alt="logo" />
+        <ImgDimension src={`/Images/${props.img}.png`} alt="logo" />
       </ImgMulti>
 
       <FlexBox>
-        <SubHeading fontSize="12px">{props.item.name}</SubHeading>
+        <SubHeading fontSize="12px">HP laptop</SubHeading>
         <Price
           color="#0EA965"
           bgColor="white"
