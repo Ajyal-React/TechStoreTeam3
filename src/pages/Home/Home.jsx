@@ -31,6 +31,15 @@ const Home = () => {
     }
   };
 
+  const getFeaturedCategories = async () => {
+    const res = await homeServices.getFeaturedCategories();
+    if (res?.isSuccess) {
+      setFeaturedCategories(res.data);
+    } else if (res?.isError) {
+      setErrorMessage(res.errorMessage);
+    }
+  };
+
   useEffect(() => {
     getFeaturedProducts();
     getFeaturedCategories();

@@ -30,6 +30,8 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
+import axios from "axios";
+import AuthServices from "../../api/AuthServices";
 
 const validate = yup.object().shape({
   email: yup
@@ -52,11 +54,25 @@ const LogIn = () => {
       password: "",
     },
     onSubmit: (values) => {
+      /* console.log('values' , values)
       alert(JSON.stringify(values, null, 2));
-      console.log("values are", values);
+      console.log("values are", values); */
+      logging(JSON.stringify(values, null, 2));
     },
     validationSchema: { validate },
   });
+
+  const logging = async (user) => {
+    const res = await AuthServices.authLoginPage(user);
+    if (res?.isSuccess) {
+      console.log("resp ", res.data);
+    } else {
+      if (res?.isError) {
+        console.log(res.errorMessage);
+      }
+    }
+  };
+
   return (
     <Fragment>
       {/*Login container starts here*/}
@@ -116,10 +132,11 @@ const LogIn = () => {
                         onBlur={handleBlur}
                         onChange={handleChange}
                         placeHolder="JohnDoe@xxx.xx"
+                        required
                       />
                       {errors.email ? (
                         <Msg>
-                          <MsgText>{errors.email}</MsgText>{" "}
+                          <MsgText>{errors.email}</MsgText>
                         </Msg>
                       ) : null}
 
@@ -129,6 +146,7 @@ const LogIn = () => {
                         placeHolder=".........."
                         onChange={handleChange}
                         onBlur={handleBlur}
+                        required
                       />
                       {errors.password ? (
                         <Msg>
