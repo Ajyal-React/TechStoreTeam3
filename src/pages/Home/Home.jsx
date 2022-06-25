@@ -7,6 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import Categories from "../../components/FeaturedCategories/Categories";
 import { useEffect, useState } from "react";
 import homeServices from "../../api/homeServices";
+import AuthServices from "../../api/AuthServices";
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -21,9 +22,11 @@ const Home = () => {
     }
   };
 
+
+
   useEffect(() => {
     getFeaturedProducts();
-  }, []);
+      }, []);
 
   return (
     <HomeContainer>
