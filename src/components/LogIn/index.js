@@ -25,7 +25,7 @@ import {
 
 import { HiMail } from "react-icons/hi";
 import { FaLock } from "react-icons/fa";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
 import { Formik, Form, useFormik } from "formik";
@@ -53,11 +53,11 @@ const LogIn = () => {
       email: "",
       password: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, user) => {
       /* console.log('values' , values)
       alert(JSON.stringify(values, null, 2));
       console.log("values are", values); */
-      logging(JSON.stringify(values, null, 2));
+      logging();
     },
     validationSchema: { validate },
   });

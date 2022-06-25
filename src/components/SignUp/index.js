@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   LeftSection,
   Container,
@@ -25,6 +25,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
+import AuthServices from "../../api/AuthServices";
 
 const validate = yup.object().shape({
   email: yup
@@ -54,14 +55,27 @@ const SignUp = () => {
       confirmPassword: "",
     },
     onSubmit: (values) => {
+      signUpAuthentication();
       alert(JSON.stringify(values, null, 2));
       console.log("values are", values);
     },
     validationSchema: { validate },
   });
+
+  const signUpAuthentication = async (user) => {
+    const res = await AuthServices.authSignUpPage(user);
+    if (res?.isSuccess) {
+      console.log("resp", res.data);
+    } else {
+      if (res?.isError) {
+        console.log(res.errorMessage);
+      }
+    }
+  };
+
   return (
     <Fragment>
-      {/*Login container starts here*/}
+      {/*Signup container starts here*/}
       <Container>
         {/*Left section starts here*/}
         <LeftSection>
@@ -185,7 +199,7 @@ const SignUp = () => {
         {/*Form section starts here*/}
         {/*Form section starts here*/}
       </Container>
-      {/*Login container ends here*/}
+      {/*Signup container ends here*/}
     </Fragment>
   );
 };
