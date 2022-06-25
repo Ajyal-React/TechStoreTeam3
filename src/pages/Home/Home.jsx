@@ -7,11 +7,10 @@ import Footer from "../../components/Footer/Footer";
 import Categories from "../../components/FeaturedCategories/Categories";
 import { useEffect, useState } from "react";
 import homeServices from "../../api/homeServices";
-import AuthServices from "../../api/AuthServices";
 
 const Home = () => {
-  const [featuredProducts, setFeaturedProducts, setFeaturedCategories] =
-    useState([]);
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredCategories, setFeaturedCategories] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
   const getFeaturedProducts = async () => {
@@ -40,7 +39,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      <Categories />
+      <Categories featuredCategories={featuredCategories} />
       <OfferSection />
       {featuredProducts.length > 0 && (
         <Featuredproducts featuredProducts={featuredProducts} />
