@@ -19,6 +19,7 @@ const Home = () => {
   const products = useSelector((state) => state.productsReducer);
 
   const getFeaturedCategories = async () => {
+    // eslint-disable-next-line no-undef
     const res = await homeServices.getFeaturedCategories();
     if (res?.isSuccess) {
       setFeaturedCategories(res.data);
@@ -51,13 +52,13 @@ const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      {featuredProducts.length > 0 && (
+      {/* {featuredProducts.length > 0 && (
         <Categories featuredCategories={featuredCategories} />
       )}
       <OfferSection />
       {featuredProducts.length > 0 && (
         <Featuredproducts featuredProducts={featuredProducts} />
-      )}
+      )} */}
       <TrendingCards />
       <Footer />
     </HomeContainer>
