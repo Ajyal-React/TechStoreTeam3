@@ -6,13 +6,13 @@ import {
   PriceTre,
 } from "../Trending/Trending.styled";
 import { Text } from "../../GlobalStyles";
-const Trending = (props) => {
+const Trending = (item) => {
   return (
     <Cards>
-      <Images src={props.image} />
+      <Images src={item.images} />
       <CntDitales>
-        <Text fontSize="16">{props.title}</Text>
-        <PriceTre>{props.price}</PriceTre>
+        <Text fontSize="16">{item.name}</Text>
+        <PriceTre>{item.price}</PriceTre>
       </CntDitales>
     </Cards>
   );
