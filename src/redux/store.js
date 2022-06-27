@@ -2,13 +2,13 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import categoriesReducer from "./reducers/categoriesReducer";
 import productsReducer from "./reducers/productsReducer";
 import trendingRruducer from "./reducers/terndingReducer";
-import { ReducerForUser } from "./UserAuth/ReducerForUser";
+import { ReducerForUser } from "./UserAuthRedux/ReducerForUser";
 import thunk from "redux-thunk";
 
 const allReducer = combineReducers({
   categoriesReducer: categoriesReducer,
   productsReducer: productsReducer,
-  trendingRruducer: trendingRruducer,
+  trendingRruducer: trendingRruducer,   
   ReducerForUser: ReducerForUser,
 });
 const middleware = [thunk];

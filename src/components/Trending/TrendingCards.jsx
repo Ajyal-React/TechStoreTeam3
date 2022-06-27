@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {useSelector , useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import { SmTitle, LgTitle } from "../../GlobalStyles";
 import { ContinerCard, ContinerItem } from "../Trending/Trending.styled";
 
@@ -88,7 +88,7 @@ const TrendingCards = (store) => {
   return (
     <ContinerItem>
       <SmTitle>TOP PRODUCTS</SmTitle>
-      <LgTitle >TRENDING THIS WEEK</LgTitle>
+      <LgTitle>TRENDING THIS WEEK</LgTitle>
       <ContinerCard>
         <>
           {/* {store.map((ele,index) => {

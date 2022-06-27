@@ -33,7 +33,7 @@ import * as yup from "yup";
 import axios from "axios";
 import AuthServices from "../../api/AuthServices";
 import { useDispatch } from "react-redux";
-import { UserLoginAction } from "../../redux/UserAuth/ActionForUser";
+import { UserLoginAction } from "../../redux/UserAuthRedux/ActionForUser";
 
 const validate = yup.object().shape({
   email: yup
@@ -49,32 +49,7 @@ const validate = yup.object().shape({
 
 const LogIn = () => {
   const dispatch = useDispatch();
-  const [formValues, setFormValues] = useState();
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    onSubmit: (values, user) => {
-      /* console.log('values' , values)
-      alert(JSON.stringify(values, null, 2));
-      console.log("values are", values); */
-      logging(user);
-    },
-    validationSchema: { validate },
-  });
-
-  const logging = async (user) => {
-    const res = await AuthServices.authLoginPage(user);
-    if (res?.isSuccess) {
-      console.log("resp ", res.data);
-    } else {
-      if (res?.isError) {
-        console.log(res.errorMessage);
-      }
-    }
-  };
+  /* const [formValues, setFormValues] = useState(); */
 
   return (
     <Fragment>
@@ -104,9 +79,7 @@ const LogIn = () => {
               }}
               validationSchema={validate}
               onSubmit={({ email, password }) => {
-                /* return AuthServices.authLoginPage(email, password); */
                 dispatch(UserLoginAction({ email, password }));
-                console.log('hiiiii')
               }}
             >
               {({
