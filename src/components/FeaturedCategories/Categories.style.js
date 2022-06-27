@@ -1,11 +1,7 @@
-
-
 import styled from "styled-components";
-
 
 export const MainContainer = styled.main`
   width: 100vw;
-  max-width: 1920px;
   margin: 0 auto;
   overflow: hidden;
 `;
@@ -23,13 +19,13 @@ export const FlexBox = styled.div`
   align-items: center;
 `;
 export const AllCard = styled.div`
-     width: 50%;
-    height: 560px;
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  width: 50%;
+  height: 560px;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 `;
 export const Center = styled.div`
   display: flex;
@@ -37,13 +33,13 @@ export const Center = styled.div`
   align-items: center;
 `;
 export const SliderDiv = styled.div`
-    width: 50%;
-    height: 560px;
-    background-color: #F9F8F8;
-    margin-top: 40px;
-    padding: 20px;
-    border-radius: 6px;
-    position: relative;
+  width: 50%;
+  height: 560px;
+  background-color: #f9f8f8;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 6px;
+  position: relative;
 `;
 
 export const Button2 = styled.button`

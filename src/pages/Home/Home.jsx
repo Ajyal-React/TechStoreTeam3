@@ -5,50 +5,14 @@ import TrendingCards from "../../components/Trending/TrendingCards";
 import Hero from "../../components/Hero/Hero";
 import Footer from "../../components/Footer/Footer";
 import Categories from "../../components/FeaturedCategories/Categories";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../redux/actions/productsActions";
-import { getCategories } from "../../redux/actions/categoriesActions";
 
 const Home = () => {
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [featuredCategories, setFeaturedCategories] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
-  const dispatch = useDispatch();
-  const categories = useSelector((state) => state.categoriesReducer);
-  const products = useSelector((state) => state.productsReducer);
-
-  useEffect(() => {
-    dispatch(getProducts());
-    dispatch(getCategories());
-  }, []);
-
-  useEffect(() => {
-    if (products.isSuccuss) {
-      setFeaturedProducts(products.data);
-    }
-    if (categories.isSuccuss) {
-      setFeaturedCategories(categories.data);
-    }
-  }, [
-    categories.data,
-    categories.isSuccuss,
-    categories.error,
-    products.data,
-    products.isSuccuss,
-    products.error,
-  ]);
-
   return (
     <HomeContainer>
       <Hero />
-      {featuredProducts.length > 0 && (
-        <Categories featuredCategories={featuredCategories} />
-      )}
+      <Categories />
       <OfferSection />
-      {featuredProducts.length > 0 && (
-        <Featuredproducts featuredProducts={featuredProducts} />
-      )}
+      <Featuredproducts />
       <TrendingCards />
       <Footer />
     </HomeContainer>
