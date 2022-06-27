@@ -1,16 +1,22 @@
 import * as actionTypes from "../actionTypes";
-import homeServices from "../../api/homeServices";
+import productsService from "../../api/productsServices";
 
 export const getCategories = () => {
   return async (dispatch) => {
     try {
-      const res = await homeServices.getFeaturedCategories();
-      console.log(res);
+      dispatch({
+        type: actionTypes.FEATURED_CATEGORIES,
+        payload: {
+          isLoading: true,
+        },
+      });
+      const res = await productsService.getFeaturedCategories();
       dispatch({
         type: actionTypes.FEATURED_CATEGORIES,
         payload: {
           data: res.data,
           isSuccuss: true,
+          isLoading: false,
         },
       });
     } catch (error) {
@@ -19,6 +25,7 @@ export const getCategories = () => {
         payload: {
           error: error,
           isSuccuss: false,
+          isLoading: false,
         },
       });
     }

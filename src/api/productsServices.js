@@ -28,9 +28,23 @@ const getFeaturedCategories = async () => {
   }
 };
 
-const homeService = {
-  getFeaturedProducts,
-  getFeaturedCategories,
+const getTrendingProducts = async () => {
+  try {
+    const response = await axios.get(API_URL + "products/trending-products");
+    return { isSuccess: true, data: response.data };
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    return { isError: true, errorMessage: message };
+  }
 };
 
-export default homeService;
+const productsService = {
+  getFeaturedProducts,
+  getFeaturedCategories,
+  getTrendingProducts,
+};
+
+export default productsService;
