@@ -57,7 +57,7 @@ const LogIn = () => {
       /* console.log('values' , values)
       alert(JSON.stringify(values, null, 2));
       console.log("values are", values); */
-      logging();
+      logging(user);
     },
     validationSchema: { validate },
   });
@@ -100,6 +100,7 @@ const LogIn = () => {
                 password: "",
               }}
               validationSchema={validate}
+           
               onSubmit={(values, actions) => {
                 console.log(values);
                 setFormValues(values);
