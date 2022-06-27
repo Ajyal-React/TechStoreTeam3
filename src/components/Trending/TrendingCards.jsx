@@ -91,11 +91,11 @@ const TrendingCards = (store) => {
       <LgTitle >TRENDING THIS WEEK</LgTitle>
       <ContinerCard>
         <>
-          {store.map((ele,index) => {
+          {/* {store.map((ele,index) => {
             return (
               <Trending image={ele.image} title={ele.title} price={ele.price} key={index}/>
             );
-          })}
+          })} */}
         </>
       </ContinerCard>
     </ContinerItem>
