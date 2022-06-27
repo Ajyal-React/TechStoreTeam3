@@ -68,7 +68,8 @@ const SignUp = () => {
       console.log("resp", res.data);
     } else {
       if (res?.isError) {
-        console.log(res.errorMessage);
+        /* console.log(res.errorMessage); */
+        console.log("🚀 ~ file: index.js ~ line 72 ~ signUpAuthentication ~ res.errorMessage", res.errorMessage)
       }
     }
   };

@@ -18,7 +18,7 @@ const authLoginPage = async (user) => {
 
 const authSignUpPage = async (user) => {
   try {
-    const response = await axios.post(API_URL + "/users/signup", user);
+    const response = await axios.post(API_URL + "/users/signup", { user });
     return { isSuccess: true, data: response.data };
   } catch (error) {
     const message =

@@ -13,6 +13,8 @@ import {
   SliderDiv,
 } from "./Categories.style";
 
+import TabCategory from "../FeaturedCategories/index";
+
 function Categories({ featuredCategories }) {
   return (
     <MainContainer>
@@ -31,10 +33,10 @@ function Categories({ featuredCategories }) {
             {/* </SliderDiv> */}
           </FlexBox>
           <Center>
-          <Link to="/Category">
-            <Button2 borderRadius="3px" bgColor="white" className="btn">
-              View More Laptops
-            </Button2>
+            <Link to="/Category">
+              <Button2 borderRadius="3px" bgColor="white" className="btn">
+                View More Laptops
+              </Button2>
             </Link>
           </Center>
         </Container>
