@@ -52,13 +52,13 @@ const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      {/* {featuredProducts.length > 0 && (
+      {featuredProducts.length > 0 && (
         <Categories featuredCategories={featuredCategories} />
       )}
       <OfferSection />
       {featuredProducts.length > 0 && (
         <Featuredproducts featuredProducts={featuredProducts} />
-      )} */}
+      )}
       <TrendingCards />
       <Footer />
     </HomeContainer>

@@ -1,4 +1,4 @@
-import SingleCard from "../Card/singleCard";
+import SingleCard from "../Card/SingleCard"
 import Navbar from "../Navbar/Navbar";
 import { AllCard, CardLab } from "./index.style";
 
