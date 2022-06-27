@@ -25,8 +25,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
-import AuthServices from "../../api/AuthServices";
-import UserSignUpAction from "../../redux/UserAuth/ActionForUser";
+import { UserSignUpAction } from "../../redux/UserAuthRedux/ActionForUser";
 import { useDispatch } from "react-redux";
 
 const validate = yup.object().shape({
@@ -50,8 +49,6 @@ const validate = yup.object().shape({
 const SignUp = () => {
   const dispatch = useDispatch();
 
-  const [formValues, setFormValues] = useState();
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -59,12 +56,7 @@ const SignUp = () => {
       confirmPassword: "",
     },
     onSubmit: (email, password, confirmPassword) => {
-      dispatch(
-        UserSignUpAction({ email, password, confirmPassword })
-        /* AuthServices.authSignUpPage(values);
-      alert(JSON.stringify(values, null, 2));
-      console.log("values are", values); */
-      );
+      dispatch(UserSignUpAction({ email, password, confirmPassword }));
     },
     validationSchema: { validate },
   });
@@ -159,7 +151,7 @@ const SignUp = () => {
                         type="submit"
                         disabled={!isValid || isSubmitting}
                       >
-                        {/* {isSubmitting ? `...` : `Sign Up`} */}
+                        {isSubmitting ? `...` : `Sign Up`}
                         <LoginIcon src="images/arrow.svg" />
                       </LoginButton>
                     </Form>
