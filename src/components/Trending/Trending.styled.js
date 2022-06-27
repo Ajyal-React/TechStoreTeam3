@@ -38,8 +38,8 @@ export const PriceTre = styled.span`
   background-color: #ff4f0416;
   border-radius: 50px;
   color: #ff4f04;
-  // line-height: 20px;
-  font-size: 16px;
+  line-height: 20px;
+  font-size: 14px;
   text-align: center;
   padding: 5px 8px;
 `;
