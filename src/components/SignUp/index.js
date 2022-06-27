@@ -55,24 +55,12 @@ const SignUp = () => {
       confirmPassword: "",
     },
     onSubmit: (values) => {
-      signUpAuthentication();
+      AuthServices.authSignUpPage(values);
       alert(JSON.stringify(values, null, 2));
       console.log("values are", values);
     },
     validationSchema: { validate },
   });
-
-  const signUpAuthentication = async (user) => {
-    const res = await AuthServices.authSignUpPage(user);
-    if (res?.isSuccess) {
-      console.log("resp", res.data);
-    } else {
-      if (res?.isError) {
-        /* console.log(res.errorMessage); */
-        console.log("🚀 ~ file: index.js ~ line 72 ~ signUpAuthentication ~ res.errorMessage", res.errorMessage)
-      }
-    }
-  };
 
   return (
     <Fragment>
@@ -100,15 +88,12 @@ const SignUp = () => {
                 password: "",
               }}
               validationSchema={validate}
-              onSubmit={(values, actions) => {
-                console.log(values);
-                setFormValues(values);
-
-                const timeOut = setTimeout(() => {
-                  actions.setSubmitting(false);
-
-                  clearTimeout(timeOut);
-                }, 1000);
+              onSubmit={({ email, password, confirmPassword }, actions) => {
+                return AuthServices.authSignUpPage(
+                  email,
+                  password,
+                  confirmPassword
+                );
               }}
             >
               {({
@@ -124,7 +109,7 @@ const SignUp = () => {
               }) => {
                 return (
                   <>
-                    <Form name="contact" method="post" onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit}>
                       <Input
                         Type="email"
                         Name="email"
@@ -169,7 +154,7 @@ const SignUp = () => {
                         type="submit"
                         disabled={!isValid || isSubmitting}
                       >
-                        {isSubmitting ? `...` : `Sign Up`}
+                        {/* {isSubmitting ? `...` : `Sign Up`} */}
                         <LoginIcon src="images/arrow.svg" />
                       </LoginButton>
                     </Form>
