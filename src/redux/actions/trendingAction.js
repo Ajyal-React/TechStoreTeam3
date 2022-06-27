@@ -1,10 +1,10 @@
 import * as actionTypes from "../actionTypes";
-import ProductTrending from "../../api/trendingProducts";
+import productsService from "../../api/productsServices";
+
 export const getTrending = () => {
   return async (dispatch) => {
     try {
-      const res = await ProductTrending.getTrendingProducts();
-      console.log(res);
+      const res = await productsService.getTrendingProducts();
       dispatch({
         type: actionTypes.TRENDING_PRODUCTS,
         payload: {

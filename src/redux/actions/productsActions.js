@@ -1,5 +1,5 @@
 import * as actionTypes from "../actionTypes";
-import homeServices from "../../api/homeServices";
+import productsService from "../../api/productsServices";
 
 export const getProducts = () => {
   return async (dispatch) => {
@@ -10,7 +10,7 @@ export const getProducts = () => {
           isLoading: true,
         },
       });
-      const res = await homeServices.getFeaturedProducts();
+      const res = await productsService.getFeaturedProducts();
       dispatch({
         type: actionTypes.FEATURED_PRODUCTS,
         payload: {
