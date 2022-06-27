@@ -1,15 +1,25 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import categoriesReducer from "./reducers/categoriesReducer";
 import productsReducer from "./reducers/productsReducer";
-import trendingRruducer from "./reducers/terndingReducer";
+import trendingReducer from "./reducers/trendingReducer";
+import { ReducerForUser } from "./UserAuth/ReducerForUser";
 import thunk from "redux-thunk";
-const middleware = [thunk];
 
 const allReducer = combineReducers({
   categoriesReducer: categoriesReducer,
   productsReducer: productsReducer,
-  trendingRruducer: trendingRruducer,
+  trendingReducer: trendingReducer,
+  ReducerForUser: ReducerForUser,
 });
+const middleware = [thunk];
+
+const userInfo = JSON.parse(localStorage.getItem("data")) || {};
+
+const initialState = {
+  userReducer: {
+    userInformation: userInfo,
+  },
+};
 
 const store = createStore(allReducer, {}, applyMiddleware(...middleware));
 

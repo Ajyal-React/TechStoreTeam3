@@ -7,9 +7,10 @@ import {
 } from "./index.style";
 import SliderItem from "../SliderItem";
 import Slider from "react-slick";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../redux/actions/productsActions";
 import "./style.css";
 import "./arrow.css";
 
@@ -59,7 +60,24 @@ function SamplePrevArrow(props) {
   );
 }
 
-const Featuredproducts = ({ featuredProducts }) => {
+const Featuredproducts = () => {
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
+  const { data, isSuccuss, isLoading, error } = useSelector(
+    (state) => state.productsReducer
+  );
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
+  useEffect(() => {
+    if (isSuccuss) {
+      setFeaturedProducts(data);
+    }
+  }, [data, isSuccuss, isLoading, error]);
+
   //Slick carousal settings starts here
   const settings = {
     dots: true,
@@ -99,86 +117,35 @@ const Featuredproducts = ({ featuredProducts }) => {
       },
     ],
   };
-  //Slick carousal settings ends here
-
-  //Products list array starts here
-
-  const [Product] = useState(
-    featuredProducts
-  
-      //  [
-      //     {
-      //       _id: "1",
-      //       images: "Images/wristwatch.PNG",
-      //       name: "Smart Watch",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "2",
-      //       images: "Images/controller.PNG",
-      //       name: "Games Arm",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "3",
-      //       images: "images/laptop.PNG",
-      //       name: "Mac Laptop",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "4",
-      //       images: "Images/bag.PNG",
-      //       name: "Back Bag",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "5",
-      //       images: "Images/wristwatch.PNG",
-      //       name: "Smart Watch",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "6",
-      //       images: "Images/controller.PNG",
-      //       name: "Games Arm",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "7",
-      //       images: "images/laptop.PNG",
-      //       name: "Mac Laptop",
-      //       price: "20",
-      //     },
-      //     {
-      //       _id: "8",
-      //       images: "Images/bag.PNG",
-      //       name: "Back Bag",
-      //       price: "20",
-      //     },
-      //   ]
-  );
-  //Products list array ends here
 
   return (
-    <SliderSection>
-      <TopTitle>
-        <SliderTitle>Devices</SliderTitle>
-        <SliderBigTitle>Featured products</SliderBigTitle>
-      </TopTitle>
+    <>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        featuredProducts.length > 0 && (
+          <SliderSection>
+            <TopTitle>
+              <SliderTitle>Devices</SliderTitle>
+              <SliderBigTitle>Featured products</SliderBigTitle>
+            </TopTitle>
 
-      <SliderContent>
-        <Slider {...settings}>
-          {Product.map((el) => (
-            <SliderItem
-              key={el.id}
-              source={el.images}
-              title={el.name}
-              price={el.price}
-            ></SliderItem>
-          ))}
-        </Slider>
-      </SliderContent>
-    </SliderSection>
+            <SliderContent>
+              <Slider {...settings}>
+                {featuredProducts.map((el) => (
+                  <SliderItem
+                    key={el.id}
+                    source={el.images}
+                    title={el.name}
+                    price={el.price}
+                  ></SliderItem>
+                ))}
+              </Slider>
+            </SliderContent>
+          </SliderSection>
+        )
+      )}
+    </>
   );
 };
 

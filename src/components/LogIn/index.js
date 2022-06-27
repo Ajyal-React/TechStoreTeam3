@@ -32,6 +32,8 @@ import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 import AuthServices from "../../api/AuthServices";
+import { useDispatch } from "react-redux";
+import { UserLoginAction } from "../../redux/UserAuth/ActionForUser";
 
 const validate = yup.object().shape({
   email: yup
@@ -46,6 +48,7 @@ const validate = yup.object().shape({
 });
 
 const LogIn = () => {
+  const dispatch = useDispatch();
   const [formValues, setFormValues] = useState();
 
   const formik = useFormik({
@@ -57,7 +60,7 @@ const LogIn = () => {
       /* console.log('values' , values)
       alert(JSON.stringify(values, null, 2));
       console.log("values are", values); */
-      logging();
+      logging(user);
     },
     validationSchema: { validate },
   });
@@ -96,19 +99,14 @@ const LogIn = () => {
             {/*Formik starts here*/}
             <Formik
               initialValues={{
-                email: "",
-                password: "",
+                email: "omaralhafni@gmail.com",
+                password: "omarAlhafni@123456",
               }}
               validationSchema={validate}
-              onSubmit={(values, actions) => {
-                console.log(values);
-                setFormValues(values);
-
-                const timeOut = setTimeout(() => {
-                  actions.setSubmitting(false);
-
-                  clearTimeout(timeOut);
-                }, 1000);
+              onSubmit={({ email, password }) => {
+                /* return AuthServices.authLoginPage(email, password); */
+                dispatch(UserLoginAction({ email, password }));
+                console.log('hiiiii')
               }}
             >
               {({

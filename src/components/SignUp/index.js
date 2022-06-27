@@ -26,6 +26,8 @@ import React from "react";
 import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
 import AuthServices from "../../api/AuthServices";
+import UserSignUpAction from "../../redux/UserAuth/ActionForUser";
+import { useDispatch } from "react-redux";
 
 const validate = yup.object().shape({
   email: yup
@@ -46,6 +48,8 @@ const validate = yup.object().shape({
 });
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
   const [formValues, setFormValues] = useState();
 
   const formik = useFormik({
@@ -54,24 +58,16 @@ const SignUp = () => {
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => {
-      signUpAuthentication();
+    onSubmit: (email, password, confirmPassword) => {
+      dispatch(
+        UserSignUpAction({ email, password, confirmPassword })
+        /* AuthServices.authSignUpPage(values);
       alert(JSON.stringify(values, null, 2));
-      console.log("values are", values);
+      console.log("values are", values); */
+      );
     },
     validationSchema: { validate },
   });
-
-  const signUpAuthentication = async (user) => {
-    const res = await AuthServices.authSignUpPage(user);
-    if (res?.isSuccess) {
-      console.log("resp", res.data);
-    } else {
-      if (res?.isError) {
-        console.log(res.errorMessage);
-      }
-    }
-  };
 
   return (
     <Fragment>
@@ -99,15 +95,10 @@ const SignUp = () => {
                 password: "",
               }}
               validationSchema={validate}
-              onSubmit={(values, actions) => {
-                console.log(values);
-                setFormValues(values);
-
-                const timeOut = setTimeout(() => {
-                  actions.setSubmitting(false);
-
-                  clearTimeout(timeOut);
-                }, 1000);
+              onSubmit={({ email, password, confirmPassword }, actions) => {
+                dispatch(
+                  UserSignUpAction({ email, password, confirmPassword })
+                );
               }}
             >
               {({
@@ -123,7 +114,7 @@ const SignUp = () => {
               }) => {
                 return (
                   <>
-                    <Form name="contact" method="post" onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit}>
                       <Input
                         Type="email"
                         Name="email"
@@ -168,7 +159,7 @@ const SignUp = () => {
                         type="submit"
                         disabled={!isValid || isSubmitting}
                       >
-                        {isSubmitting ? `...` : `Sign Up`}
+                        {/* {isSubmitting ? `...` : `Sign Up`} */}
                         <LoginIcon src="images/arrow.svg" />
                       </LoginButton>
                     </Form>
