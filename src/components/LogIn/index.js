@@ -100,16 +100,8 @@ const LogIn = () => {
                 password: "",
               }}
               validationSchema={validate}
-           
-              onSubmit={(values, actions) => {
-                console.log(values);
-                setFormValues(values);
-
-                const timeOut = setTimeout(() => {
-                  actions.setSubmitting(false);
-
-                  clearTimeout(timeOut);
-                }, 1000);
+              onSubmit={({ email, password }) => {
+                return AuthServices.authLoginPage(email, password);
               }}
             >
               {({
