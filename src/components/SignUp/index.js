@@ -26,6 +26,8 @@ import React from "react";
 import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
 import AuthServices from "../../api/AuthServices";
+import UserSignUpAction from "../../redux/UserAuth/ActionForUser";
+import { useDispatch } from "react-redux";
 
 const validate = yup.object().shape({
   email: yup
@@ -46,6 +48,8 @@ const validate = yup.object().shape({
 });
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
   const [formValues, setFormValues] = useState();
 
   const formik = useFormik({
@@ -54,10 +58,13 @@ const SignUp = () => {
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => {
-      AuthServices.authSignUpPage(values);
+    onSubmit: (email, password, confirmPassword) => {
+      dispatch(
+        UserSignUpAction({ email, password, confirmPassword })
+        /* AuthServices.authSignUpPage(values);
       alert(JSON.stringify(values, null, 2));
-      console.log("values are", values);
+      console.log("values are", values); */
+      );
     },
     validationSchema: { validate },
   });
@@ -89,10 +96,8 @@ const SignUp = () => {
               }}
               validationSchema={validate}
               onSubmit={({ email, password, confirmPassword }, actions) => {
-                return AuthServices.authSignUpPage(
-                  email,
-                  password,
-                  confirmPassword
+                dispatch(
+                  UserSignUpAction({ email, password, confirmPassword })
                 );
               }}
             >
