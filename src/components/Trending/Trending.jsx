@@ -11,7 +11,7 @@ const Trending = (item) => {
     <Cards>
       <Images src={item.images} />
       <CntDitales>
-        <Text fontSize="16">{item.name}</Text>
+        <Text fontSize="12px">{item.name}</Text>
         <PriceTre>{item.price}</PriceTre>
       </CntDitales>
     </Cards>
