@@ -3,8 +3,6 @@ import { useState ,useEffect} from "react";
 import {useSelector , useDispatch} from 'react-redux'
 import { SmTitle, LgTitle } from "../../GlobalStyles";
 import { ContinerCard, ContinerItem } from "../Trending/Trending.styled";
-
-import store from "../../redux/store";
 import Trending from "./Trending";
 import { getTrending } from "../../redux/actions/trendingAction";
 
@@ -20,96 +18,15 @@ const TrendingCards = () => {
     }
   }, [data, isSuccuss, isLoading, error]);
 
-
   useEffect(() => {
     dispatch(getTrending());
   }, []);
 
 
-
-
-
-  // const [item] = useState([
-  //   {
-  //     image: "images/laptop.png",
-  //     title: "Nike Court Air",
-  //     price: "$58",
-  //   },
-  //   {
-  //     image: "images/controller.png",
-  //     title: "Nike Court Air",
-  //     price: "$58",
-  //   },
-  //   {
-  //     image: "images/bag.png",
-  //     title: "Nike Court Air",
-  //     price: "$58",
-  //   },
-  //   {
-  //     image: "images/laptop.png",
-  //     title: "Nike Court Air",
-  //     price: "$58",
-  //   },
-  //   {
-  //     image: "images/phone1.png",
-  //     title: "Nike Court Air",
-  //     price: "$58",
-  //   },
-  //   {
-  //       image: "images/laptop.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/controller.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/bag.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/laptop.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/phone1.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/laptop.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/controller.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/bag.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/laptop.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  //     {
-  //       image: "images/phone1.png",
-  //       title: "Nike Court Air",
-  //       price: "$58",
-  //     },
-  // ]);
   return (
     <ContinerItem>
       <SmTitle>TOP PRODUCTS</SmTitle>
-      <LgTitle >TRENDING THIS WEEK</LgTitle>
+      <LgTitle>TRENDING THIS WEEK</LgTitle>
       <ContinerCard>
         <>
           {trendingCards.map((ele,index) => {

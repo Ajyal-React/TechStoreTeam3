@@ -19,15 +19,18 @@ import {
   Msg,
   MsgText,
   SuccessMsg,
+  Icon,
+  InputContainer,
 } from "../LogIn/index.style";
 import "./index.style";
 import { Link } from "react-router-dom";
 import React from "react";
 import { Formik, Form, useFormik } from "formik";
 import * as yup from "yup";
-import AuthServices from "../../api/AuthServices";
-import UserSignUpAction from "../../redux/UserAuth/ActionForUser";
+import { UserSignUpAction } from "../../redux/UserAuthRedux/ActionForUser";
 import { useDispatch } from "react-redux";
+import { HiMail } from "react-icons/hi";
+import { FaLock } from "react-icons/fa";
 
 const validate = yup.object().shape({
   email: yup
@@ -50,8 +53,6 @@ const validate = yup.object().shape({
 const SignUp = () => {
   const dispatch = useDispatch();
 
-  const [formValues, setFormValues] = useState();
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -59,12 +60,7 @@ const SignUp = () => {
       confirmPassword: "",
     },
     onSubmit: (email, password, confirmPassword) => {
-      dispatch(
-        UserSignUpAction({ email, password, confirmPassword })
-        /* AuthServices.authSignUpPage(values);
-      alert(JSON.stringify(values, null, 2));
-      console.log("values are", values); */
-      );
+      dispatch(UserSignUpAction({ email, password, confirmPassword }));
     },
     validationSchema: { validate },
   });
@@ -115,50 +111,75 @@ const SignUp = () => {
                 return (
                   <>
                     <Form onSubmit={handleSubmit}>
-                      <Input
-                        Type="email"
-                        Name="email"
-                        autoComplete="email"
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        placeHolder="JohnDoe@xxx.xx"
-                      />
-                      {errors.email ? (
-                        <Msg>
-                          <MsgText>{errors.email}</MsgText>{" "}
-                        </Msg>
-                      ) : null}
+                      <InputContainer>
+                        <Icon>
+                          <HiMail />
+                        </Icon>
+                        <Input
+                          Type="email"
+                          Name="email"
+                          autoComplete="email"
+                          onBlur={handleBlur}
+                          onChange={handleChange}
+                          placeHolder="Email"
+                          required
+                        />
 
-                      <Input
-                        Type="password"
-                        Name="password"
-                        placeHolder=".........."
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                      {errors.password ? (
-                        <Msg>
-                          <MsgText>{errors.password}</MsgText>{" "}
-                        </Msg>
-                      ) : null}
+                        {errors.email ? (
+                          <Msg>
+                            <MsgText>{errors.email}</MsgText>
+                          </Msg>
+                        ) : null}
+                      </InputContainer>
 
-                      <Input
-                        Type="password"
-                        Name="confirmPassword"
-                        placeHolder=".........."
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
-                      {errors.confirmPassword ? (
-                        <Msg>
-                          <MsgText>{errors.confirmPassword}</MsgText>
-                        </Msg>
-                      ) : null}
+                     
+
+                      <InputContainer>
+                        <Icon>
+                          <FaLock />
+                        </Icon>
+                        <Input
+                          Type="password"
+                          Name="password"
+                          placeHolder="Password"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          required
+                        />
+
+                        {errors.password ? (
+                          <Msg>
+                            <MsgText>{errors.password}</MsgText>{" "}
+                          </Msg>
+                        ) : null}
+                      </InputContainer>
+
+
+                      <InputContainer>
+                        <Icon>
+                          <FaLock />
+                        </Icon>
+                        <Input
+                          Type="password"
+                          Name="confirmPassword"
+                          placeHolder="confirmPassword"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          required
+                        />
+
+                        {errors.confirmPassword ? (
+                          <Msg>
+                            <MsgText>{errors.confirmPassword}</MsgText>{" "}
+                          </Msg>
+                        ) : null}
+                      </InputContainer>
+                    
 
                       <LoginButton
                         type="submit"
                         disabled={!isValid || isSubmitting}
-                      >
+                      > sign Up
                         {/* {isSubmitting ? `...` : `Sign Up`} */}
                         <LoginIcon src="images/arrow.svg" />
                       </LoginButton>
