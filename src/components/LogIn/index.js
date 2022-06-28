@@ -96,40 +96,53 @@ const LogIn = () => {
                 return (
                   <>
                     <Form name="contact" method="post" onSubmit={handleSubmit}>
-                      <Input
-                        Type="email"
-                        Name="email"
-                        autoComplete="email"
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                        placeHolder="JohnDoe@xxx.xx"
-                        required
-                      />
-                      {errors.email ? (
-                        <Msg>
-                          <MsgText>{errors.email}</MsgText>
-                        </Msg>
-                      ) : null}
+                      <InputContainer>
+                        <Icon>
+                          <HiMail />
+                        </Icon>
+                        <Input
+                          Type="email"
+                          Name="email"
+                          autoComplete="email"
+                          onBlur={handleBlur}
+                          onChange={handleChange}
+                          placeHolder="Email"
+                          required
+                        />
 
-                      <Input
-                        Type="password"
-                        Name="password"
-                        placeHolder=".........."
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        required
-                      />
-                      {errors.password ? (
-                        <Msg>
-                          <MsgText>{errors.password}</MsgText>{" "}
-                        </Msg>
-                      ) : null}
+                        {errors.email ? (
+                          <Msg>
+                            <MsgText>{errors.email}</MsgText>
+                          </Msg>
+                        ) : null}
+                      </InputContainer>
+
+                      <InputContainer>
+                        <Icon>
+                          <FaLock />
+                        </Icon>
+                        <Input
+                          Type="password"
+                          Name="password"
+                          placeHolder="Password"
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          required
+                        />
+
+                        {errors.password ? (
+                          <Msg>
+                            <MsgText>{errors.password}</MsgText>{" "}
+                          </Msg>
+                        ) : null}
+                      </InputContainer>
 
                       <LoginButton
                         type="submit"
                         disabled={!isValid || isSubmitting}
                       >
-                        {isSubmitting ? `...` : `login`}
+                        Login
+                       {/*  {isSubmitting ? `...` : `login`} */}
                         <LoginIcon src="images/arrow.svg" />
                       </LoginButton>
                     </Form>
