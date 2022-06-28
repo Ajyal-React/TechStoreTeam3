@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { SmTitle, LgTitle } from "../../GlobalStyles";
-import { ContinerCard, ContinerItem } from "../Trending/Trending.styled";
+import { ContinerCard, ContinerItem , SmTitle, LgTitle} from "../Trending/Trending.styled";
 import Trending from "./Trending";
 import { getTrending } from "../../redux/actions/trendingAction";
 import Spinner from "../Spinner/Spinner";
-const TrendingCards = (store) => {
+
+
+const TrendingCards = () => {
   const [trendingCards, setTrendingCards] = useState([]);
   const dispatch = useDispatch();
 
