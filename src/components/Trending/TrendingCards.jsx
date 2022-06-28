@@ -5,7 +5,9 @@ import { ContinerCard, ContinerItem , SmTitle, LgTitle} from "../Trending/Trendi
 import Trending from "./Trending";
 import { getTrending } from "../../redux/actions/trendingAction";
 import Spinner from "../Spinner/Spinner";
-const TrendingCards = (store) => {
+
+
+const TrendingCards = () => {
   const [trendingCards, setTrendingCards] = useState([]);
   const dispatch = useDispatch();
 
