@@ -43,25 +43,6 @@ const TrendingCards = () => {
                     price={ele.price}
                     key={index}
                   />
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
-
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
                 </>
               );
             })
