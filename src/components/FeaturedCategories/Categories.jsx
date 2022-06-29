@@ -27,21 +27,21 @@ function Categories() {
   );
 
   useEffect(() => {
+    dispatch(getCategories());
+  }, []);
+
+  useEffect(() => {
     if (isSuccuss) {
       setFeaturedCategories(data);
     }
   }, [data, isSuccuss, isLoading, error]);
-
-  useEffect(() => {
-    dispatch(getCategories());
-  }, []);
 
   return (
     <MainContainer>
       {isLoading ? (
         <Spinner />
       ) : (
-        featuredCategories.length > 0 && (
+        featuredCategories?.length > 0 && (
           <ContainerCard>
             <Container>
               <TabCategory />

@@ -35,6 +35,7 @@ export const StyledSpinner = styled.svg`
 
 export const SpinnerContainer = styled.div`
   width: 100%;
+  height: ${({ fill }) => fill && "100vh"};
   display: flex;
   justify-content: center;
   align-items: center;

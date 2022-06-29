@@ -8,7 +8,7 @@ import {
 const RadioColor = ({ id, c1, c2 }) => {
   return (
     <ColumnRadio>
-      <LabelContent for={id}>
+      <LabelContent htmlFor={id}>
         <ColorBox bg={c1} />
         <ColorBox bg={c2} />
       </LabelContent>

@@ -37,7 +37,7 @@ const Navbar = () => {
         </ul>
       </NavbarList>
       {/* <a href="#"><Logo src="images/logo.png" /></a> */}
-      <Logo src="images/logo.png" />
+      <Logo src="/images/logo.png" />
       <NavbarList marginLeft="2%">
         <ul>
           <List marginLeft="15px">Laptop</List>
