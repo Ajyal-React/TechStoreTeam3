@@ -110,7 +110,7 @@ export const SmText = styled.p`
 export const Span = styled.span`
   font-size: 20px;
   font-weight: 500;
-  color: #0ea965;
+  color: ${({ red }) => (red ? "red" : "#0ea965")};
 `;
 
 export const Select = styled.select`

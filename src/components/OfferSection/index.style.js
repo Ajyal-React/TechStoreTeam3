@@ -5,7 +5,7 @@ export const OfferSection = styled.div`
   width: 100%;
   height: auto;
   padding: 80px 0px;
-  background-image: url("images/laptop_bg.PNG");
+  background-image: url("/images/laptop_bg.PNG");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
