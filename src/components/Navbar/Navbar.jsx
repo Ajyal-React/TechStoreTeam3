@@ -32,7 +32,8 @@ const Navbar = () => {
           <List>Mobiles</List>
         </ul>
       </NavbarList>
-      <Logo src="images/logo.png" />
+      {/* <a href="#"><Logo src="images/logo.png" /></a> */}
+      <Logo src="/images/logo.png" />
       <NavbarList marginLeft="2%">
         <ul>
           <List marginLeft="15px">Laptop</List>

@@ -23,6 +23,6 @@ export const ColorBox = styled.div`
   width: 47px;
   height: 47px;
   box-shadow: 0px 3px 6px #00000029;
-  border: 0.3px solid #c4c2c2;
+  /* border: 0.3px solid #c4c2c2; */
   background-color: ${({ bg }) => bg};
 `;

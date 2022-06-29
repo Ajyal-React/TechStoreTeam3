@@ -6,13 +6,21 @@ import {
   PriceTre,
 } from "../Trending/Trending.styled";
 import { Text } from "../../GlobalStyles";
-const Trending = (item) => {
+import { useNavigate } from "react-router-dom";
+
+const Trending = (props) => {
+  const navigate = useNavigate();
+
   return (
-    <Cards>
-      <Images src={item.images} />
+    <Cards
+      onClick={() => {
+        navigate(`/product/${props.id}`);
+      }}
+    >
+      <Images src={props.images} />
       <CntDitales>
-        <Text fontSize="12px">{item.name}</Text>
-        <PriceTre>{item.price}</PriceTre>
+        <Text fontSize="12px">{props.name}</Text>
+        <PriceTre>{props.price}</PriceTre>
       </CntDitales>
     </Cards>
   );
