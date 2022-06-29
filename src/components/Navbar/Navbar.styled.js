@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavSection = styled.div`
   display: flex;
-  padding: 30px;
+  height: ${(props) => (props.extendNavbar ? "200px" : "80px")};
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   line-height: normal;
@@ -21,11 +21,18 @@ export const SelectOpctions = styled.select`
   margin-left: 5%;
   padding: 8px 10px;
   outline: none;
+  @media (max-width: 700px) {
+    display: none;
+  } ;
 `;
 
 export const SpanIcon = styled.span`
   margin-left: 3%;
   align-items: center;
+
+  @media (max-width: 700px) {
+    display: none;
+  } ;
 `;
 
 export const NavbarList = styled.div`
@@ -49,6 +56,10 @@ export const List = styled.li`
   &:active {
     color: #fa7400;
   }
+
+  @media (max-width: 700px) {
+    display: none;
+  } ;
 `;
 
 export const Logo = styled.img`
@@ -140,3 +151,47 @@ export const Tag = styled.li`
   }
 `;
 //Search overlay ends here
+
+// Navbar Extended
+
+export const BtnSide = styled.button`
+  font-size: 40px;
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  @media (min-width: 700px) {
+    display: none;
+  } ;
+`;
+
+export const NavExtendedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 700px) {
+    display: none;
+  } ;
+`;
+
+export const ListExtended = styled.li`
+  list-style: none;
+  display: block;
+  margin-top: 0px;
+  cursor: pointer;
+  margin-left: 0px;
+  color: #000;
+  font-weight: 500;
+
+  &:hover {
+    color: #fa7400;
+    transition: 0.5s;
+  }
+  &:active {
+    color: #fa7400;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  } ;
+`;
