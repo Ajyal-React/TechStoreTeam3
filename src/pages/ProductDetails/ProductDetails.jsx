@@ -13,73 +13,120 @@ import {
   Button,
 } from "./ProductDetails.styled";
 import { Navbar, RadioColor } from "../../components";
-import { Column, Row, Divider } from "../../GlobalStyles";
-import Footer from "../../components/Footer/Footer";
+import { Divider } from "../../GlobalStyles";
+import Footer from "../../components/Footer/Footer";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductById, rest } from "../../redux/actions/productsActions";
+import Spinner from "../../components/Spinner/Spinner";
 
 const ProductDetails = () => {
-  return (
-    <ProductDetailsContainer>
-      <Navbar />
-      <DetailsContent>
-        <DetailsColumn>
-          <ImageDisplay src="./images/bag.png" />
-          <RowGap gap="13px">
-            <SmImageBox>
-              <SmImageDisplay src="./images/bag.png" />
-            </SmImageBox>
-            <SmImageBox>
-              <SmImageDisplay src="./images/phone1.png" />
-            </SmImageBox>
-            <SmImageBox>
-              <SmImageDisplay src="./images/phone2.png" />
-            </SmImageBox>
-            <SmImageBox>
-              <SmImageDisplay src="./images/phone3.png" />
-            </SmImageBox>
-            <SmImageBox>
-              <SmImageDisplay src="./images/phone4.png" />
-            </SmImageBox>
-          </RowGap>
-        </DetailsColumn>
+  const [product, setProduct] = useState(null);
+  const [imageIndex, setImageIndex] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
+  const params = useParams();
+  const dispatch = useDispatch();
 
-        <DetailsColumn>
-          <ProductTitle>MacBook Pro 13</ProductTitle>
-          <SmText color="#9B9A9A">The best for your professional life</SmText>
-          <SmText color="#707070" fz="20px" mt="10px">
-            Availability in stock: <Span>Available</Span>
-          </SmText>
-          <Divider />
-          <SmText fw="600" mt="25px">
-            Choose your combination
-          </SmText>
-          <RowGap gap="40px">
-            <RadioColor id="1" c1="#646363" c2="#FFFFFF" />
-            <RadioColor id="2" c1="#FFFFFF" c2="#000000" />
-            <RadioColor id="3" c1="#AFAFAF" c2="#000000" />
-            <RadioColor id="4" c1="#CACACA" c2="#FFFFFF" />
-          </RowGap>
-          <SmText fw="600" mt="25px">
-            Size and Weight
-          </SmText>
-          <Select />
-          <SmText fw="600" mt="25px">
-            Chip
-          </SmText>
-          <Select />
-          <SmText fw="600" mt="25px">
-            Storage
-          </SmText>
-          <Select />
-          <SmText fw="600" mt="25px">
-            Memory
-          </SmText>
-          <Select />
-          <Button>Add To Cart</Button>
-        </DetailsColumn>
-      </DetailsContent>
-      <Footer/>
-    </ProductDetailsContainer>
+  const { data, isSuccuss, isLoading, error } = useSelector(
+    (state) => state.productsReducer
+  );
+
+  useEffect(() => {
+    dispatch(getProductById(params.productId));
+  }, []);
+
+  useEffect(() => {
+    if (data && isSuccuss) {
+      setProduct(data);
+      dispatch(rest);
+    }
+    if (!isSuccuss && error) {
+      setErrorMessage(error);
+      dispatch(rest);
+    }
+  }, [data, isSuccuss, isLoading, error]);
+
+  const handleImageIndex = (index) => {
+    setImageIndex(index);
+  };
+
+  return (
+    <>
+      {isLoading ? (
+        <Spinner fill />
+      ) : product !== null ? (
+        <ProductDetailsContainer>
+          <Navbar />
+          <DetailsContent>
+            <DetailsColumn>
+              <ImageDisplay src={product?.images[imageIndex]} />
+              <RowGap gap="13px">
+                {product?.images?.map((item, index) => (
+                  <SmImageBox
+                    key={item}
+                    onClick={() => handleImageIndex(index)}
+                  >
+                    <SmImageDisplay src={item} />
+                  </SmImageBox>
+                ))}
+              </RowGap>
+            </DetailsColumn>
+
+            <DetailsColumn>
+              <ProductTitle>{product?.name}</ProductTitle>
+              <SmText color="#9B9A9A">{product?.description}</SmText>
+              <SmText color="#707070" fz="20px" mt="10px">
+                Availability in stock:{" "}
+                {product?.countInStock > 0 ? (
+                  <Span>Available</Span>
+                ) : (
+                  <Span red>Out of Stock</Span>
+                )}
+              </SmText>
+              <Divider />
+              <SmText fw="600" mt="25px">
+                Choose your combination
+              </SmText>
+              <RowGap gap="40px">
+                {product?.colors?.map((item) => (
+                  <RadioColor key={item} id={item} c1={item[0]} c2={item[1]} />
+                ))}
+              </RowGap>
+              <GetSelectOption
+                title="Size and Weight"
+                options={product?.size}
+              />
+              <GetSelectOption title="Chip" options={product?.chip} />
+              <GetSelectOption title="Storage" options={product?.storage} />
+              <GetSelectOption title="Memory" options={product?.memory} />
+              <Button>Add To Cart</Button>
+            </DetailsColumn>
+          </DetailsContent>
+          <Footer />
+        </ProductDetailsContainer>
+      ) : (
+        <div>some thing bad happened {errorMessage}</div>
+      )}
+    </>
   );
 };
 
 export default ProductDetails;
+
+const GetSelectOption = ({ title, options }) =>
+  options &&
+  options?.length !== 0 && (
+    <>
+      <SmText fw="600" mt="25px">
+        {title}
+      </SmText>
+      <Select>
+        {options.map((item) => (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        ))}
+      </Select>
+    </>
+  );

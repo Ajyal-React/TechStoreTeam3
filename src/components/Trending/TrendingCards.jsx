@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ContinerCard, ContinerItem , SmTitle, LgTitle} from "../Trending/Trending.styled";
+import {
+  ContinerCard,
+  ContinerItem,
+  SmTitle,
+  LgTitle,
+} from "../Trending/Trending.styled";
 import Trending from "./Trending";
 import { getTrending } from "../../redux/actions/trendingAction";
 import Spinner from "../Spinner/Spinner";
-
 
 const TrendingCards = () => {
   const [trendingCards, setTrendingCards] = useState([]);
@@ -34,37 +38,16 @@ const TrendingCards = () => {
           {isLoading ? (
             <Spinner />
           ) : (
-            trendingCards.map((ele, index) => {
-              return (
-                <>
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
-
-                  <Trending
-                    images={ele.images}
-                    name={ele.name}
-                    price={ele.price}
-                    key={index}
-                  />
-                </>
-              );
-            })
+            trendingCards?.length > 0 &&
+            trendingCards?.map((ele, index) => (
+              <Trending
+                images={ele.images}
+                name={ele.name}
+                price={ele.price}
+                id={ele._id}
+                key={index}
+              />
+            ))
           )}
         </>
       </ContinerCard>

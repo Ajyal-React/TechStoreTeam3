@@ -41,10 +41,24 @@ const getTrendingProducts = async () => {
   }
 };
 
+const getProductById = async (id) => {
+  try {
+    const response = await axios.get(API_URL + `products/${id}`);
+    return { isSuccess: true, data: response.data };
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    return { isError: true, errorMessage: message };
+  }
+};
+
 const productsService = {
   getFeaturedProducts,
   getFeaturedCategories,
   getTrendingProducts,
+  getProductById,
 };
 
 export default productsService;

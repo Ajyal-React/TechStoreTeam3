@@ -31,3 +31,40 @@ export const getProducts = () => {
     }
   };
 };
+
+export const getProductById = (id) => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: actionTypes.PRODUCT_BY_ID,
+        payload: {
+          isLoading: true,
+          data: null,
+        },
+      });
+      const res = await productsService.getProductById(id);
+      dispatch({
+        type: actionTypes.PRODUCT_BY_ID,
+        payload: {
+          data: res.data,
+          isSuccuss: true,
+          isLoading: false,
+        },
+      });
+    } catch (error) {
+      dispatch({
+        type: actionTypes.PRODUCT_BY_ID,
+        payload: {
+          error: error,
+          isSuccuss: false,
+          isLoading: false,
+        },
+      });
+    }
+  };
+};
+
+export const rest = {
+  type: actionTypes.REST,
+  payload: {},
+};

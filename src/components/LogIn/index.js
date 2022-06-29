@@ -74,8 +74,8 @@ const LogIn = () => {
             {/*Formik starts here*/}
             <Formik
               initialValues={{
-                email: "omaralhafni@gmail.com",
-                password: "omarAlhafni@123456",
+                email: "a@gmail.com",
+                password: "a@gmail.com",
               }}
               validationSchema={validate}
               onSubmit={({ email, password }) => {
@@ -142,7 +142,7 @@ const LogIn = () => {
                         disabled={!isValid || isSubmitting}
                       >
                         Login
-                       {/*  {isSubmitting ? `...` : `login`} */}
+                        {/*  {isSubmitting ? `...` : `login`} */}
                         <LoginIcon src="images/arrow.svg" />
                       </LoginButton>
                     </Form>
