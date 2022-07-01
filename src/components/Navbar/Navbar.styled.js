@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavSection = styled.div`
   display: flex;
-  height: ${(props) => (props.extendNavbar ? "200px" : "80px")};
+  height: ${(props) => (props.extendNavbar ? "500px" : "80px")};
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   line-height: normal;
@@ -11,6 +11,9 @@ export const NavSection = styled.div`
   z-index: 2;
   position: fixed;
   width: 100%;
+  @media (max-width: 700px) {
+    height: 60px;
+  } ;
 `;
 
 export const SelectOpctions = styled.select`
@@ -65,6 +68,12 @@ export const List = styled.li`
 export const Logo = styled.img`
   width: 150px;
   margin-left: 3%;
+  @media (max-width: 795px) {
+    margin-left: 20%;
+  }
+  @media (max-width: 491px) {
+    margin-left: 10%;
+  } ;
 `;
 
 export const BtnSginIn = styled.button`
@@ -82,6 +91,16 @@ export const BtnSginIn = styled.button`
     opacity: 0.7;
     color: #fff;
   }
+  @media (max-width: 795px) {
+    margin-left: 25%;
+    font-size: 12px;
+  }
+  @media (max-width: 597px) {
+    margin-left: 15%;
+  }
+  @media (max-width: 491px) {
+    margin-left: 10%;
+  } ;
 `;
 
 //Search overlay starts here
@@ -155,7 +174,9 @@ export const Tag = styled.li`
 // Navbar Extended
 
 export const BtnSide = styled.button`
-  font-size: 40px;
+  font-size: 25px;
+  margin-left: 10px;
+  line-height: 15px;
   cursor: pointer;
   border: none;
   background: none;
@@ -164,24 +185,83 @@ export const BtnSide = styled.button`
     display: none;
   } ;
 `;
+export const ContinerIcon = styled.div`
+  display: flex;
+`;
 
 export const NavExtendedContainer = styled.div`
   display: flex;
+  background-color: #fff;
+  position: absolute;
+  top: 55px;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 500px;
   flex-direction: column;
+  padding: 4rem 0.5rem;
+  gap: 2rem;
+  /* text-align: center; */
+  font-size: 1.3rem;
+  font-weight: bold;
+  transform: ${({ open }) => (open ? "translateX(0%);" : "translateX(-100%);")};
+  transition: transform 150ms ease-in;
 
-  @media (min-width: 700px) {
+  @media (min-width: 795px) {
     display: none;
   } ;
 `;
 
+export const InfNavbarExtended = styled.div`
+  display: flex;
+  margin-top: -40px;
+`;
+export const DivTextExtended = styled.div`
+  margin-left: 10px;
+  margin-top: 10px;
+`;
+
+export const TextExtended = styled.p`
+  line-height: 20px;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
+  color: #014b76;
+`;
+export const ImgNavbarExtended = styled.img`
+  width: 55px;
+  border-radius: 50%;
+`;
+
+export const SelectOpctionsExtended = styled.select`
+  background: #7b77770f 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  display: inline-block;
+  border: none;
+  margin-left: 0px;
+  padding: 8px 10px;
+  outline: none;
+`;
+
+export const SpanIconExtended = styled.span`
+  margin-left: 60px;
+  margin-top: 10px;
+  background: none;
+  font-size: 14px;
+`;
+
+export const NavbarListExtended = styled.div`
+  color: ${({ color }) => (color ? color : "#000")};
+`;
 export const ListExtended = styled.li`
   list-style: none;
+  display: ${({ display }) => (display ? display : "block")};
   display: block;
-  margin-top: 0px;
+  margin-top: 8px;
   cursor: pointer;
-  margin-left: 0px;
+  margin-left: 10px;
   color: #000;
   font-weight: 500;
+  font-size: 16px;
+  color: ${({ colorActive }) => (colorActive ? colorActive : "#000")};
 
   &:hover {
     color: #fa7400;
@@ -190,8 +270,4 @@ export const ListExtended = styled.li`
   &:active {
     color: #fa7400;
   }
-
-  @media (max-width: 700px) {
-    display: none;
-  } ;
 `;
