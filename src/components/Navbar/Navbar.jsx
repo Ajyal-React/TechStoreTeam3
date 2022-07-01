@@ -1,5 +1,6 @@
-import React from "react";
-import { FaRegWindowClose, FaSearch } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaRegWindowClose, FaSearch, FaBars } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 
 import {
   NavSection,
@@ -9,17 +10,70 @@ import {
   Logo,
   SpanIcon,
   BtnSginIn,
+  BtnSide,
   ContainerSearch,
   SearchInput,
   SearchIcon,
   Tags,
   Tag,
+  ListExtended,
+  NavExtendedContainer,
+  SelectOpctionsExtended,
+  SpanIconExtended,
+  NavbarListExtended,
+  InfNavbarExtended,
+  ImgNavbarExtended,
+  TextExtended,
+  DivTextExtended,
+  ContinerIcon,
 } from "../Navbar/Navbar.styled";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [extendNavbar, setExtendNavbar] = useState(false);
   return (
-    <NavSection>
+    <NavSection extendNavbar={extendNavbar}>
+      <BtnSide
+        onClick={() => {
+          setExtendNavbar((curr) => !curr);
+        }}
+      >
+        {extendNavbar ? <AiOutlineClose /> : <FaBars />}
+      </BtnSide>
+
+      {/* side navbar */}
+      {extendNavbar && (
+        <NavExtendedContainer open={extendNavbar}>
+          <InfNavbarExtended>
+            <ImgNavbarExtended src="images/user.png" />
+            <DivTextExtended>
+              <TextExtended fontSize="16px">UserName</TextExtended>
+              <TextExtended fontSize="12px">My Profile</TextExtended>
+            </DivTextExtended>
+          </InfNavbarExtended>
+
+          <NavbarListExtended>
+            <ul>
+              <ContinerIcon>
+                <ListExtended colorActive="#fa7400" display='inline-block'>Home</ListExtended>
+                <SpanIconExtended>
+                  <FaSearch />
+                </SpanIconExtended>
+              </ContinerIcon>
+              <ListExtended>New arrival</ListExtended>
+              <ListExtended>Mobiles</ListExtended>
+              <ListExtended>LabTops</ListExtended>
+              <ListExtended>Headphones</ListExtended>
+              <ListExtended>Accessorieas</ListExtended>
+            </ul>
+          </NavbarListExtended>
+          <SelectOpctionsExtended>
+            <option value="English">English</option>
+            <option value="Arbic">Arbic</option>
+          </SelectOpctionsExtended>
+        </NavExtendedContainer>
+      )}
+
       <SelectOpctions>
         <option value="English">English</option>
         <option value="Arbic">Arbic</option>
@@ -36,15 +90,7 @@ const Navbar = () => {
           <List>Mobiles</List>
         </ul>
       </NavbarList>
-      {/* <a href="#"><Logo src="images/logo.png" /></a> */}
-      <Logo src="/images/logo.png" />
-      <NavbarList marginLeft="2%">
-        <ul>
-          <List marginLeft="15px">Laptop</List>
-          <List marginLeft="15px">Headphones</List>
-          <List marginLeft="15px">Accessorieas</List>
-        </ul>
-      </NavbarList>
+      <Logo src="images/logo.png" />
       <BtnSginIn>
         <Link to="/login" style={{ textDecoration: "none", color: "#fa7400" }}>
           Sgin In
