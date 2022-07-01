@@ -6,10 +6,17 @@ import {
   Name,
 } from "./SliderItem.styled";
 import { Row, Column, Text, Price } from "../../../GlobalStyles";
+import { useNavigate } from "react-router-dom";
 
 const SliderItem = ({ itemData }) => {
+    const navigate = useNavigate();
+
   return (
-    <SliderContainer>
+    <SliderContainer
+      onClick={() => {
+        navigate(`/product/${itemData.id}`);
+      }}
+    >
       <Column direction="column" align="center">
         <Row w="100%">
           <Discount>{itemData.discount}</Discount>

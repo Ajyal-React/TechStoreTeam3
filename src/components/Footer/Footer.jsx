@@ -26,7 +26,7 @@ const Footer = () => {
     <Foot>
       <ContFooter>
         <Elements1>
-          <Logo src="images/logo.png" />
+          <Logo src="/images/logo.png" />
           <Text width="380px" marginLeft="20px">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
