@@ -2,8 +2,13 @@ import * as actionTypes from "../actionTypes";
 import productsService from "../../api/productsServices";
 
 export const getCategories = () => {
-  return async (dispatch) => {
+  return async (dispatch, getStore) => {
     try {
+      const store = getStore();
+     const config = {
+      "Authorization" : `Bearer ${store.token}`,
+
+     }
       dispatch({
         type: actionTypes.FEATURED_CATEGORIES,
         payload: {
