@@ -6,6 +6,7 @@ import { Item } from "./components/Item/Item";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getProfileUser } from "../../redux/actions/profileUserActions";
+import Footer from "../../components/Footer/Footer";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const UserProfile = () => {
         <Item />
         <Item />
       </MyOrderContainer>
+      <Footer />
     </ProfileContainer>
   );
 };
