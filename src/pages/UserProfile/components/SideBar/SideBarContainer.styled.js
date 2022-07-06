@@ -6,9 +6,6 @@ background-color:#DDD;
 margin-top:265px;
 padding-top:70px;
 border:2px solid #B2B6B7;
-
-
-
 `
 
 export const UL = styled.ul`
