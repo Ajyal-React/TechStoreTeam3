@@ -16,14 +16,18 @@ export const ContinerCard = styled.div`
   gap: 30px;
   flex-wrap: wrap;
   margin-top: 20px;
+  margin-bottom: 40px;
   @media (max-width: 768px) {
     justify-content: center;
     gap: 15px;
     padding: 0px;
+    justify-content: left;
+    /* margin-left: 10%; */
   }
   @media (max-width: 576px) {
     gap: 8px;
-    justify-content: none;
+    /* justify-content: center; */
+    margin-left: 28%;
   }
 `;
 export const Cards = styled.div`
@@ -32,6 +36,11 @@ export const Cards = styled.div`
 
   @media (max-width: 768px) {
     width: 150px;
+    height: 170px;
+    margin-top: 10%;
+  }
+  @media (max-width: 1024px) {
+    width: 180px;
     height: 170px;
     margin-top: 10%;
   }
@@ -51,6 +60,9 @@ export const Images = styled.img`
   /* @media (max-width: 576px) {
     height: 120px;
   } */
+  @media (max-width: 1024px) {
+    height: 150px;
+  }
 `;
 export const SmTitle = styled.p`
   color: #302f2f;
