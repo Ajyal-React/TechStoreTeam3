@@ -3,21 +3,29 @@ import {
   Discount,
   SliderImage,
   DiscountPrice,
+  Name,
 } from "./SliderItem.styled";
 import { Row, Column, Text, Price } from "../../../GlobalStyles";
+import { useNavigate } from "react-router-dom";
 
 const SliderItem = ({ itemData }) => {
+    const navigate = useNavigate();
+
   return (
-    <SliderContainer>
+    <SliderContainer
+      onClick={() => {
+        navigate(`/product/${itemData.id}`);
+      }}
+    >
       <Column direction="column" align="center">
         <Row w="100%">
           <Discount>{itemData.discount}</Discount>
         </Row>
         <SliderImage src={itemData.image} />
         <Row justify="space-between">
-          <Text fontSize="37px" weight="600">
+          <Name fontSize="37px" weight="600" lg>
             {itemData.title}
-          </Text>
+          </Name>
           <Price>{itemData.price}</Price>
         </Row>
         <Row margin="15px 0px 0px 0px" justify="space-between" align="center">

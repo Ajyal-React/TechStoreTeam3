@@ -4,6 +4,8 @@ import { devices } from "../../General/MediaQuery.style";
 export const Item = styled.div`
   width: 25%;
   height: auto;
+  //to centerize the slider items
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,9 +38,13 @@ export const Image = styled.img`
 `;
 
 export const ItemTitle = styled.span`
+  width: 100%;
   font-size: 16px;
   color: #111111;
   font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 export const SliderItemPrice = styled.span`
@@ -93,4 +99,5 @@ export const Text = styled.span`
 
 export const Arrow = styled.span`
   margin-right: 30px;
+  margin-top: 7px;
 `;

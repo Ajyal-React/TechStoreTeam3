@@ -1,18 +1,22 @@
 import { HomeContainer } from "./Home.styled";
-import { SingleSlider } from "../../components";
 import Featuredproducts from "../../components/FeaturedProducts";
 import OfferSection from "../../components/OfferSection";
-// import Navbar from "../../components/Navbar/Navbar";
-import Hero from '../../components/Hero/Hero'
+import Hero from "../../components/Hero/Hero";
 import Navbar from "../../components/Navbar/Navbar";
+// import Footer from "../../components/Footer";
+// import SingleSlider from "../../components/SingleSlider";
+// import TrendingCards from "../../components/TrendingCards";
+
 const Home = () => {
   return (
     <HomeContainer>
-      <Navbar/>
-      <Hero/>
-      <SingleSlider />
+      <Navbar />
+      <Hero />
+      {/* <SingleSlider /> */}
       <OfferSection />
       <Featuredproducts />
+      {/* <TrendingCards /> */}
+      {/* <Footer /> */}
     </HomeContainer>
   );
 };

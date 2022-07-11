@@ -1,7 +1,16 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { mobile } from "../../../utils/media";
+import { Text } from "../../../GlobalStyles";
 
 export const SliderContainer = styled.div`
   padding: 22px 40px;
+
+  ${mobile(
+    css`
+      padding: 20px;
+    `,
+    450
+  )}
 `;
 
 export const Discount = styled.p`
@@ -15,6 +24,16 @@ export const Discount = styled.p`
   font-size: 20px;
   font-weight: 500;
   color: #000;
+
+  ${mobile(
+    css`
+      width: 100px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 40px;
+    `,
+    450
+  )}
 `;
 
 export const SliderImage = styled.img`
@@ -24,6 +43,13 @@ export const SliderImage = styled.img`
     transform: scaleX(-1);
   }
   object-fit: fill;
+  ${mobile(
+    css`
+      height: 250px;
+      margin: 10px 0px 20px 0px;
+    `,
+    450
+  )}
 `;
 
 export const DiscountPrice = styled.p`
@@ -34,4 +60,17 @@ export const DiscountPrice = styled.p`
   margin-right: 15px;
   text-decoration: line-through;
   text-decoration-color: red;
+  ${mobile(
+    css`
+      font-size: 17px;
+    `,
+    450
+  )}
+`;
+
+export const Name = styled(Text)`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 10px;
 `;

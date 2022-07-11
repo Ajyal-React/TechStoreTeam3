@@ -1,7 +1,6 @@
 //Styled component for the "Featured products" is here
 
 import styled from "styled-components";
-import { devices } from "../../General/MediaQuery.style";
 
 export const SliderSection = styled.div`
   width: 100%;
@@ -11,20 +10,13 @@ export const SliderSection = styled.div`
   align-items: flex-start;
   flex-direction: column;
   margin: 104px 0px;
-
- /*  @media ${devices.mobileS} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  } */
 `;
 
 export const SliderTitle = styled("h3")`
   color: #302f2f;
   font-size: 14px;
   text-transform: uppercase;
+  font-weight: 400;
 `;
 
 export const SliderBigTitle = styled("h5")`
@@ -33,29 +25,11 @@ export const SliderBigTitle = styled("h5")`
   text-transform: uppercase;
 `;
 
-export const Slider = styled.div`
+export const SliderContent = styled.div`
   width: 100%;
-  margin: 0 auto;
   height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 0px auto;
   margin-top: 42px;
-  @media ${devices.mobileM} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  @media ${devices.mobileS} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-align: center;
-  }
 `;
 
 export const TopTitle = styled.div`
@@ -63,4 +37,37 @@ export const TopTitle = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+  margin: 0 auto;
+  width: 80%;
+
+  @media (max-width: 341px) {
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 576px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 992px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 1200px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1400px) {
+  }
+
+  @media (max-width: 950px) {
+  }
 `;

@@ -18,7 +18,7 @@ export const HeroSection = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
   /* width: 100%;
   margin-top: -100px;
   opacity: 1;

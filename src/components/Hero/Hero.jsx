@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HeroSection,
   Image,
@@ -12,26 +12,28 @@ import { Text } from "../../GlobalStyles";
 import { BsChevronDoubleRight } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Hero = () => {
+const Hero = ({ offer}) => {
+  // useEffect(() => {
+  //   useDispatch(getOffers());
+  // }, []);
   return (
     <HeroSection>
-      <Image src="images/hero_bg.png" />
-      <ContainerHero>
-      <TetleHero top="50%" left="10%">
-        <TitleSuber fontSize="40px" color="#fff" marginBottom="20px">
-          PLAYSTATION 5
-        </TitleSuber>
-        <Text fontSize="18px" color="#fff" weight="500">
-          lightning-fast download speed with super-fast ssd storage
-        </Text>
-        <BtnHero>
-          Start Shopping <BsChevronDoubleRight />
-        </BtnHero>
-        <IconDown>
-          <IoIosArrowDown />
-        </IconDown>
-      </TetleHero>
-        </ContainerHero>
+      <Image image={offer?.imageBanner}>
+        <TetleHero top="50%" left="10%">
+          <TitleSuber fontSize="40px" color="#fff" marginBottom="20px">
+            {offer?.name}
+          </TitleSuber>
+          <Text fontSize="18px" color="#fff" weight="500">
+            {offer?.description}{" "}
+          </Text>
+          <BtnHero>
+            Start Shopping <BsChevronDoubleRight />
+          </BtnHero>
+          <IconDown>
+            <IoIosArrowDown />
+          </IconDown>
+        </TetleHero>
+      </Image>
     </HeroSection>
   );
 };
