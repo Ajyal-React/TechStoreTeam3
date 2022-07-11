@@ -8,7 +8,7 @@ import {
   SpanIcon,
   BtnSginIn
 } from "../Navbar/Navbar.styled";
-import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   return (
