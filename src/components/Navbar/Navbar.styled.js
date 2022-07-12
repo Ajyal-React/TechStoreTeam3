@@ -26,7 +26,10 @@ export const SelectOpctions = styled.select`
   outline: none;
   @media (max-width: 700px) {
     display: none;
-  } ;
+  }
+  @media (max-width: 950px) {
+    margin-left: 2%;
+  }
 `;
 
 export const SpanIcon = styled.span`
@@ -42,6 +45,19 @@ export const NavbarList = styled.div`
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : "8%")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "18px")};
   color: ${({ color }) => (color ? color : "#000")};
+  @media (max-width: 1400px) {
+    margin-left: 50px;
+    font-size: 16px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 14px;
+  }
+  @media (max-width: 950px) {
+    font-size: 12px;
+  }
+  @media (max-width: 795px) {
+    display: inline-block;
+  }
 `;
 export const List = styled.li`
   list-style: none;
@@ -59,9 +75,16 @@ export const List = styled.li`
   &:active {
     color: #fa7400;
   }
+<<<<<<< HEAD
+  @media (min-width: 768px) {
+  }
+  @media (max-width: 700px) {
+    display: none;
+=======
   @media (max-width: 950px) {
     font-size: 16px;
     margin-left: 0%;
+>>>>>>> 178cc73ac4ab329d317568edd139d7162a288fff
   }
 `;
 
@@ -71,9 +94,28 @@ export const Logo = styled.img`
   @media (max-width: 795px) {
     margin-left: 20%;
   }
+
   @media (max-width: 491px) {
     margin-left: 10%;
-  } ;
+  }
+  @media (max-width: 1400px) {
+    margin-left: 5px;
+  }
+  @media (max-width: 950px) {
+    width: 130px;
+  }
+  @media (max-width: 699px) {
+    margin-left: 35%;
+  }
+  @media (max-width: 621px) {
+    margin-left: 25%;
+  }
+  @media (max-width: 320px) {
+    margin-left: 10%;
+  }
+  @media (max-width: 1400px) {
+    margin-left: 80px;
+  }
 `;
 
 export const BtnSginIn = styled.button`
@@ -91,6 +133,10 @@ export const BtnSginIn = styled.button`
     opacity: 0.7;
     color: #fff;
   }
+  @media (max-width: 950px) {
+    padding: 8px 14px;
+    margin-left: 8px;
+  }
   @media (max-width: 795px) {
     margin-left: 25%;
     font-size: 12px;
@@ -100,7 +146,10 @@ export const BtnSginIn = styled.button`
   }
   @media (max-width: 491px) {
     margin-left: 10%;
-  } ;
+  }
+  @media (max-width: 1400px) {
+    margin-left: 10%;
+  }
 `;
 
 //Search overlay starts here
@@ -183,7 +232,7 @@ export const BtnSide = styled.button`
 
   @media (min-width: 700px) {
     display: none;
-  } ;
+  }
 `;
 export const ContinerIcon = styled.div`
   display: flex;
@@ -207,7 +256,7 @@ export const NavExtendedContainer = styled.div`
   transform: ${({ open }) => (open ? "translateX(0%);" : "translateX(-100%);")};
   transition: transform 150ms ease-in;
 
-  @media (min-width: 795px) {
+  @media (min-width: 700px) {
     display: none;
   } ;
 `;
@@ -242,10 +291,13 @@ export const SelectOpctionsExtended = styled.select`
 `;
 
 export const SpanIconExtended = styled.span`
-  margin-left: 60px;
+  margin-left: 40px;
   margin-top: 10px;
   background: none;
   font-size: 14px;
+  @media (max-width: 950px) {
+    font-size: 12px;
+  }
 `;
 
 export const NavbarListExtended = styled.div`
