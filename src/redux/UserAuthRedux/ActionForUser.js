@@ -1,4 +1,4 @@
-import { LOGIN_FOR_USER, SIGNUP_FOR_USER } from "../UserAuth/TypesForUsers";
+import { LOGIN_FOR_USER, SIGNUP_FOR_USER } from "../UserAuthRedux/TypesForUsers";
 import axios from "axios";
 
 export const UserSignUpAction = (values) => {

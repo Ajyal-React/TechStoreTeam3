@@ -10,7 +10,7 @@ import Slider from "react-slick";
 import Spinner from "../Spinner/Spinner";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../redux/actions/productsActions";
+import { getProducts, rest } from "../../redux/actions/productsActions";
 import "./style.css";
 import "./arrow.css";
 
@@ -75,6 +75,7 @@ const Featuredproducts = () => {
   useEffect(() => {
     if (isSuccuss) {
       setFeaturedProducts(data);
+      dispatch(rest);
     }
   }, [data, isSuccuss, isLoading, error]);
 
@@ -123,7 +124,7 @@ const Featuredproducts = () => {
       {isLoading ? (
         <Spinner />
       ) : (
-        featuredProducts.length > 0 && (
+        featuredProducts?.length > 0 && (
           <SliderSection>
             <TopTitle>
               <SliderTitle>Devices</SliderTitle>
@@ -134,11 +135,12 @@ const Featuredproducts = () => {
               <Slider {...settings}>
                 {featuredProducts.map((el) => (
                   <SliderItem
-                    key={el.id}
+                    key={el._id}
                     source={el.images}
                     title={el.name}
                     price={el.price}
-                  ></SliderItem>
+                    id={el._id}
+                  />
                 ))}
               </Slider>
             </SliderContent>

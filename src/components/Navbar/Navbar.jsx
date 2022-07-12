@@ -91,15 +91,6 @@ const Navbar = () => {
         </ul>
       </NavbarList>
       <Logo src="images/logo.png" />
-
-      <NavbarList marginLeft="2%">
-        <ul>
-          <List marginLeft="15px">Laptops</List>
-          <List marginLeft="15px">Headphones</List>
-          <List marginLeft="15px">Accessorieas</List>
-        </ul>
-      </NavbarList>
-
       <BtnSginIn>
         <Link to="/login" style={{ textDecoration: "none", color: "#fa7400" }}>
           Sgin In

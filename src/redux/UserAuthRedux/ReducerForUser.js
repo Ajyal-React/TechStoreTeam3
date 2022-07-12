@@ -1,4 +1,4 @@
-import { SIGNUP_FOR_USER, LOGIN_FOR_USER } from "../UserAuth/TypesForUsers";
+import { SIGNUP_FOR_USER, LOGIN_FOR_USER } from "../UserAuthRedux/TypesForUsers";
 
 export const ReducerForUser = (state = "", action) => {
   switch (action.type) {

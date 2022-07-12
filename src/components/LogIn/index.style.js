@@ -1,12 +1,18 @@
 import styled from "styled-components";
-
+import Form from 'formik';
 /*Left section starts here*/
 export const Container = styled.section`
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `;
+
+
+/* export Form = styled.form`
+
+`; */
 
 export const LeftSection = styled.div`
   width: 35%;
@@ -17,16 +23,16 @@ export const LeftSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  min-width: 300px;
   flex-wrap: wrap;
   padding-left: 125px;
-  min-width: 300px;
   @media (max-width: 341px) {
+    padding-left: 0px;
     width: 100%;
-    background-color: red;
   }
   @media (max-width: 576px) {
     width: 100%;
-    justify-content: center;
+    align-items: center;
   }
 
   @media (max-width: 768px) {
@@ -58,6 +64,10 @@ export const WelcomeText = styled.h5`
   color: #f3f3f3;
   font-size: 30px;
   font-weight: bold;
+  @media (max-width: 576px) {
+    text-align: center;
+    padding: 10px;
+  }
 `;
 
 export const DescText = styled.h5`
@@ -68,6 +78,10 @@ export const DescText = styled.h5`
   font-weight: 400;
   max-width: 350px;
   opacity: 0.6;
+  @media (max-width: 576px) {
+    text-align: center;
+    padding: 10px;
+  }
 `;
 
 export const ItalicText = styled.span`
@@ -91,12 +105,16 @@ export const FormSection = styled.section`
   flex-wrap: wrap;
   height: 100%;
   background-color: #f3f3f3;
-  min-width: 500px;
+  min-width: 300px;
+
   @media (max-width: 341px) {
     width: 100%;
+    justify-content: center;
+    align-items: center;
   }
   @media (max-width: 576px) {
     width: 100%;
+    align-items: center;
     justify-content: center;
   }
 
@@ -125,6 +143,15 @@ export const LoginForm = styled.div`
   align-items: flex-start;
   width: 90%;
   padding-left: 200px;
+  @media (max-width: 341px) {
+  padding-left: 225px;
+
+   
+  }
+  @media (max-width: 576px) {
+  padding-left: 225px;
+   
+  }
 `;
 
 export const LoginText = styled.h3`
@@ -134,6 +161,15 @@ export const LoginText = styled.h3`
   margin-bottom: 20px;
   font-size: 24px;
   text-transform: uppercase;
+  @media (max-width: 341px) {
+   text-align: center;
+  font-size: 18px;
+  margin-right: 40px;
+   
+  }
+  @media (max-width: 576px) {
+   
+  }
 `;
 
 export const Input = styled.input.attrs((props) => ({
@@ -142,17 +178,50 @@ export const Input = styled.input.attrs((props) => ({
   type: props.Type,
 }))`
   background-color: #ffffff;
-  box-shadow: 10px 12px 20px #000000 0.8;
+  box-shadow: 2px 2px 30px #e3e3e3;
   outline: none;
   height: 50px;
-  width: 70%;
-  padding-left: 20px;
+  width: 100%;
+  padding-left: 45px;
   border: 1px solid #eeeeee;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
+  position: absolute;
   box-sizing: border-box;
+  margin-left: 40px;
+
+  @media (max-width: 576px) {
+    margin-left: 40px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (min-width: 1400px) {
+  }
+
+  @media (max-width: 950px) {
+  }
 
   &:focus {
     border-left: 5px solid #f6921e;
+  }
+
+  &::placeholder {
+    margin-top: 20px;
+    color: #cccbcb;
+    font-size: 12px;
+    position: absolute;
+    bottom: 25px;
   }
 `;
 
@@ -167,11 +236,13 @@ export const LoginButton = styled.button`
   text-transform: uppercase;
   margin-left: 355px;
   font-weight: 500;
+  @media (max-width: 576px) {
+  }
 `;
 
 export const LoginIcon = styled.img`
   width: 20%;
-  margin-bottom: -14px;
+  margin-bottom: -8px;
   &:hover {
     width: 20.1%;
     margin-left: 3px;
@@ -214,78 +285,40 @@ export const CustomizeForm = styled.div`
 `;
 
 export const InputContainer = styled.div`
-  width: 70%;
-  height: 60px;
+  width: 100%;
+  position: relative;
+  height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-right: 40px;
+
+  @media (max-width: 576px) {
+    right: 200px;
+    width: 60%;
+  }
 `;
 
 export const Icon = styled.div`
   position: absolute;
   left: 10px;
-  top: 27px;
-`;
-
-export const InputBox = styled.div`
-  position: relative;
-  margin-top: 10px;
-  width: 50%;
-  border: none;
-  input {
-    width: 100%;
-    height: 60px;
-    background: #ffffff;
-    box-shadow: 0px 12px 20px #00000014;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    padding-left: 30px;
-    &::placeholder {
-      color: transparent;
-    }
-    &:placeholder-shown ~ label {
-      font-size: 14px;
-      cursor: text;
-      top: 20px;
-    }
-  }
-  label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 14px;
-    color: #9b9b9b;
-    padding-left: 30px;
-  }
-  input:focus {
-    ~ label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 14px;
-      color: #9b9b9b;
-    }
-    border-left: 8px solid #fa7400;
-  }
-  input {
-    &:required,
-    &:invalid {
-      box-shadow: none;
-    }
-  }
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  top: 10px;
+  color: #cccbcb;
 `;
 
 export const Msg = styled.div`
   width: 100%;
+  margin-top: 60px;
 `;
 
 export const MsgText = styled.p`
   font-size: 14px;
+  font-size: 13px;
   color: red;
 `;
 

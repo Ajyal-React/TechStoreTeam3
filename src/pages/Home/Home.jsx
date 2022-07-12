@@ -10,9 +10,14 @@ const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      <Categories />
+      {Featuredproducts.length > 0 && (
+        // eslint-disable-next-line no-undef
+        <Categories featuredCategories={featuredCategories} />
+      )}
       <OfferSection />
-      <Featuredproducts />
+      {Featuredproducts.length > 0 && (
+        <Featuredproducts featuredProducts={Featuredproducts} />
+      )}
       <TrendingCards />
       <Footer />
     </HomeContainer>

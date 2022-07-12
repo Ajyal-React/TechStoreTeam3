@@ -1,7 +1,7 @@
 import { StyledSpinner, SpinnerContainer } from "./Spinner.style";
 
-const Spinner = () => (
-  <SpinnerContainer>
+const Spinner = ({ fill }) => (
+  <SpinnerContainer {...fill}>
     <StyledSpinner viewBox="0 0 50 50">
       <circle
         className="path"
